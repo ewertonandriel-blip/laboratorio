@@ -416,6 +416,93 @@
     padding: 3px 10px; border-radius: 50px; letter-spacing: 0.5px;
   }
 
+  /* NOVO: card "Sobre mim" no perfil */
+  .sobre-mim-card {
+    background: linear-gradient(135deg, rgba(77,171,247,0.06), rgba(233,69,96,0.03));
+    border: 1px solid rgba(77,171,247,0.2); border-radius: 16px;
+    padding: 20px; margin-bottom: 20px;
+  }
+  .sobre-mim-card h4 {
+    font-size: 15px; color: #4dabf7; margin-bottom: 15px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .sobre-mim-secao { margin-bottom: 15px; }
+  .sobre-mim-secao:last-child { margin-bottom: 0; }
+  .sobre-mim-label {
+    font-size: 11px; color: #8b8b9e; text-transform: uppercase;
+    letter-spacing: 0.5px; font-weight: 600; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .sobre-mim-social {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .social-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 14px; border-radius: 10px; text-decoration: none;
+    font-size: 13px; font-weight: 600; transition: all 0.2s;
+    border: 1px solid;
+  }
+  .social-btn.instagram { background: rgba(225,48,108,0.1); color: #e1306c; border-color: rgba(225,48,108,0.3); }
+  .social-btn.instagram:hover { background: #e1306c; color: #fff; }
+  .social-btn.facebook { background: rgba(24,119,242,0.1); color: #1877f2; border-color: rgba(24,119,242,0.3); }
+  .social-btn.facebook:hover { background: #1877f2; color: #fff; }
+  .social-btn.whatsapp { background: rgba(37,211,102,0.1); color: #25D366; border-color: rgba(37,211,102,0.3); }
+  .social-btn.whatsapp:hover { background: #25D366; color: #fff; }
+  .social-btn.telegram { background: rgba(0,136,204,0.1); color: #0088cc; border-color: rgba(0,136,204,0.3); }
+  .social-btn.telegram:hover { background: #0088cc; color: #fff; }
+  .social-btn.loja { background: rgba(156,39,176,0.1); color: #ce93d8; border-color: rgba(156,39,176,0.3); }
+  .social-btn.loja:hover { background: #9c27b0; color: #fff; }
+  .sobre-mim-local {
+    font-size: 14px; color: #e8e8e8;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .sobre-mim-insumos {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .insumo-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px; border-radius: 50px;
+    background: rgba(76,175,80,0.1); color: #81c784;
+    border: 1px solid rgba(76,175,80,0.3);
+    font-size: 12px; font-weight: 500; text-decoration: none;
+    transition: all 0.2s;
+  }
+  a.insumo-tag:hover { background: #4caf50; color: #fff; }
+  .insumo-tag.sem-link { cursor: default; }
+
+  /* NOVO: formulário editar perfil */
+  .perfil-form-secao {
+    background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px; padding: 18px; margin-bottom: 18px;
+  }
+  .perfil-form-secao h4 {
+    font-size: 14px; color: #4dabf7; margin-bottom: 15px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .perfil-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .perfil-form-grid .full { grid-column: 1 / -1; }
+  .perfil-form-grid .uf { max-width: 100px; }
+  .insumo-linha {
+    display: grid; grid-template-columns: 1fr 1.5fr 44px;
+    gap: 10px; margin-bottom: 10px;
+  }
+  .insumo-linha input { font-size: 13px; padding: 10px 14px; }
+  .btn-add-insumo {
+    width: 100%; padding: 12px; background: transparent;
+    border: 1px dashed rgba(255,255,255,0.2); color: #a0a0b0;
+    border-radius: 12px; cursor: pointer; font-family: inherit;
+    font-size: 13px; transition: all 0.3s;
+  }
+  .btn-add-insumo:hover { border-color: #4caf50; color: #81c784; background: rgba(76,175,80,0.05); }
+  .selo-perfil-completo {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: rgba(76,175,80,0.15); color: #81c784;
+    border: 1px solid rgba(76,175,80,0.3);
+    padding: 3px 10px; border-radius: 50px;
+    font-size: 11px; font-weight: 600; margin-left: 6px;
+    vertical-align: middle;
+  }
+
   .perfume-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden;}
   .perfume-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #e94560; transition: all 0.3s;}
   .perfume-card.pronto::before { background: #4caf50; }
@@ -551,6 +638,8 @@
   .btn-fixar { background: rgba(245,179,1,0.1); border: 1px solid rgba(245,179,1,0.3); color: #f5b301; padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 13px; font-family: inherit; font-weight: 600; transition: all 0.2s;}
   .btn-fixar:hover { background: #f5b301; color: #151724; }
   .btn-fixar.ativo { background: #f5b301; color: #151724; }
+  .btn-editar-perfil { background: rgba(77,171,247,0.1); border: 1px solid rgba(77,171,247,0.3); color: #4dabf7; padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 13px; font-family: inherit; font-weight: 600; transition: all 0.2s;}
+  .btn-editar-perfil:hover { background: #4dabf7; color: #fff; }
   
   .modal-botoes { display: flex; gap: 12px; margin-top: 25px; grid-column: 1 / -1; }
   .btn-cancelar { flex: 1; padding: 14px; border-radius: 12px; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #ccc; cursor: pointer; font-weight: 600; font-family: inherit; transition: all 0.3s;}
@@ -705,6 +794,9 @@
     .usuario-item { flex-direction: column; align-items: stretch; }
     .onboarding-passo { flex-direction: column; align-items: flex-start; gap: 10px; }
     .onboarding-passo button { width: 100%; }
+    .perfil-form-grid { grid-template-columns: 1fr; }
+    .insumo-linha { grid-template-columns: 1fr; }
+    .insumo-linha .btn-remover { width: 100%; padding: 8px; font-size: 16px; }
   }
 </style>
 </head>
@@ -810,10 +902,8 @@
       <section id="aba-lancamentos" class="aba">
         <div class="card">
           <h2>🆕 Últimos Lançamentos</h2>
-          <!-- NOVO: ranking mensal -->
           <div id="rankingMensalContainer"></div>
           <div id="topSemanaContainer"></div>
-          <!-- NOVO: chips de filtro rápido -->
           <div class="chips-filtro">
             <button class="chip ativo" data-chip="todos" onclick="aplicarChipFiltro('todos')">Todos</button>
             <button class="chip" data-chip="prontos" onclick="aplicarChipFiltro('prontos')">🎯 Prontos p/ testar</button>
@@ -861,7 +951,6 @@
       <section id="aba-minhas" class="aba hidden">
         <div class="card">
           <h2>📚 Meus Perfumes</h2>
-          <!-- NOVO: onboarding primeiro acesso -->
           <div id="onboardingContainer"></div>
           <div class="filtros">
             <input id="filtroBuscaMinhas" placeholder="🔍 Buscar..." oninput="renderMinhas()" />
@@ -950,7 +1039,6 @@
               </div>
             </div>
 
-            <!-- NOVO: notas olfativas -->
             <div class="form-grupo full">
               <label>Notas Olfativas (opcional)</label>
               <div class="chips-notas" id="chipsNotasSugeridas"></div>
@@ -1062,7 +1150,6 @@
             <div class="admin-card"><h3>Perfumes Prontos</h3><p id="adminTotalProntos">0</p></div>
             <div class="admin-card"><h3>Perfumes em Maceração</h3><p id="adminTotalMacerando">0</p></div>
           </div>
-          <!-- NOVO: dashboard admin -->
           <div id="adminGraficos"></div>
           <h3 style="margin-bottom: 15px; color: #fff;">⏳ Solicitações Pendentes</h3>
           <div id="adminSolicitacoes" style="margin-bottom: 30px;">
@@ -1094,6 +1181,83 @@
   <div class="modal" id="conteudoModalPerfil">
     <button class="btn-fechar-modal" onclick="fecharModalPerfil()">✖</button>
     <div id="perfilConteudo"></div>
+  </div>
+</div>
+<div id="modalEditarPerfil" class="modal-fundo hidden">
+  <div class="modal" style="max-width: 700px;">
+    <button class="btn-fechar-modal" onclick="fecharModalEditarPerfil()">✖</button>
+    <h2 style="font-size: 1.5rem; margin-bottom: 20px;">✏️ Editar Perfil</h2>
+    <form id="formEditarPerfil">
+      <!-- Localização -->
+      <div class="perfil-form-secao">
+        <h4>📍 Localização</h4>
+        <div class="perfil-form-grid">
+          <div>
+            <label>Cidade</label>
+            <input type="text" id="perfilCidade" maxlength="60" placeholder="Ex: São Paulo" />
+          </div>
+          <div>
+            <label>Estado (UF)</label>
+            <select id="perfilEstado" class="uf">
+              <option value="">--</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Redes sociais -->
+      <div class="perfil-form-secao">
+        <h4>🌐 Redes Sociais</h4>
+        <div class="perfil-form-grid">
+          <div>
+            <label>Instagram</label>
+            <input type="text" id="perfilInstagram" maxlength="50" placeholder="@seu_usuario" />
+          </div>
+          <div>
+            <label>Facebook</label>
+            <input type="text" id="perfilFacebook" maxlength="100" placeholder="nome ou link completo" />
+          </div>
+          <div>
+            <label>Telegram</label>
+            <input type="text" id="perfilTelegram" maxlength="50" placeholder="@usuario ou telefone" />
+          </div>
+          <div>
+            <label>WhatsApp</label>
+            <input type="tel" id="perfilWhatsapp" maxlength="15" placeholder="DDD + número" oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Loja -->
+      <div class="perfil-form-secao">
+        <h4>🛒 Minha Loja / Site</h4>
+        <div class="perfil-form-grid">
+          <div>
+            <label>Nome da Loja</label>
+            <input type="text" id="perfilLojaNome" maxlength="80" placeholder="Ex: Essências da Ana" />
+          </div>
+          <div>
+            <label>Link da Loja</label>
+            <input type="text" id="perfilLojaUrl" maxlength="300" placeholder="www.minhaloja.com.br" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Insumos -->
+      <div class="perfil-form-secao">
+        <h4>🧪 Insumos que uso</h4>
+        <p style="font-size: 12px; color: #8b8b9e; margin-bottom: 12px; line-height: 1.5;">
+          Adicione os insumos que você utiliza e onde encontrá-los. Outros membros verão essa lista no seu perfil.
+        </p>
+        <div id="listaInsumosForm"></div>
+        <button type="button" class="btn-add-insumo" onclick="adicionarInsumo()">+ Adicionar insumo</button>
+      </div>
+
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <button type="button" class="btn-cancelar" onclick="fecharModalEditarPerfil()">Cancelar</button>
+        <button type="submit" class="btn-enviar" style="margin-top: 0; grid-column: auto;">💾 Salvar Perfil</button>
+      </div>
+    </form>
   </div>
 </div>
 <div id="modalConfirmarExclusao" class="modal-confirmar-exclusao hidden">
@@ -1129,12 +1293,15 @@ const firebaseConfig = {
 
 const SUPER_ADMIN_EMAIL = "ewerton.andriel@gmail.com";
 const PERFUMES_POR_PAGINA = 20;
+const MAX_INSUMOS = 20;
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 const db = getFirestore(app);
+
+const UFS = ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"];
 
 let deferredPrompt = null;
 
@@ -1180,17 +1347,16 @@ let emailPerfilAnterior = null;
 let idPerfumeExcluindo = null;
 let nomePerfumeExcluindo = "";
 let notifTabAtual = 'metas';
-let chipFiltroAtivo = 'todos'; // NOVO
-let notasSelecionadas = []; // NOVO
+let chipFiltroAtivo = 'todos';
+let notasSelecionadas = [];
 
 let paginas = { lanc: 1, fav: 1, minhas: 1 };
 let filtradosLanc = [], filtradosFav = [], filtradosMinhas = [];
 
 const RASCUNHO_KEY = 'contratipos_rascunho_form';
 const LIMITE_NOTIFS_LIDAS = 200;
-const ONBOARDING_DISMISS_KEY = 'contratipos_onboarding_dismiss'; // NOVO
+const ONBOARDING_DISMISS_KEY = 'contratipos_onboarding_dismiss';
 
-// NOVO: notas olfativas sugeridas (chips iniciais)
 const NOTAS_SUGERIDAS = [
   "Baunilha", "Oud", "Âmbar", "Cítrico", "Amadeirado", "Floral",
   "Frutado", "Especiado", "Aromático", "Couro", "Almiscar",
@@ -1214,13 +1380,27 @@ function ehAdminComum(email) {
   return m && m.isAdmin === true;
 }
 
-// NOVO: descobre o status admin do autor (para selo)
 function statusAdminDoAutor(email) {
   if (!email) return null;
   if (ehSuperAdminEmail(email)) return 'super';
   const m = todosMembros.find(x => x.email === email);
   if (m && m.isAdmin) return 'admin';
   return null;
+}
+
+// NOVO: perfil tem "completude" quando ≥3 campos preenchidos
+function perfilEstaCompleto(membro) {
+  if (!membro) return false;
+  let count = 0;
+  if (membro.cidade) count++;
+  if (membro.estado) count++;
+  if (membro.instagram) count++;
+  if (membro.facebook) count++;
+  if (membro.telegram) count++;
+  if (membro.whatsapp) count++;
+  if (membro.lojaNome || membro.lojaUrl) count++;
+  if (membro.insumos && membro.insumos.length > 0) count++;
+  return count >= 3;
 }
 
 function detectarIOSouSafari() {
@@ -1308,7 +1488,6 @@ function atualizarContador(inputId, max) {
   else if (len >= max * 0.9) counter.classList.add('perto');
 }
 
-// NOVO: renderizar chips de notas
 function renderChipsNotas() {
   const sugeridas = document.getElementById("chipsNotasSugeridas");
   const selecionadas = document.getElementById("chipsNotasSelecionadas");
@@ -1643,7 +1822,6 @@ window.mudarNotifTab = (tab) => {
   document.getElementById('notifListaSociais').classList.toggle('hidden', tab !== 'sociais');
 };
 
-// NOVO: chip de filtro rápido
 window.aplicarChipFiltro = (chip) => {
   chipFiltroAtivo = chip;
   document.querySelectorAll('.chip').forEach(c => c.classList.toggle('ativo', c.dataset.chip === chip));
@@ -1709,7 +1887,7 @@ function salvarRascunho() {
     nomePerfume: document.getElementById("nomePerfume").value,
     marcaEssencia: document.getElementById("marcaEssencia").value,
     concentracao: document.getElementById("concentracao").value,
-    notasOlfativas: notasSelecionadas.slice(), // NOVO
+    notasOlfativas: notasSelecionadas.slice(),
     tipoOndeEncontrar: document.getElementById("tipoOndeEncontrar").value,
     linkSite: document.getElementById("linkSite").value,
     nomeVendedor: document.getElementById("nomeVendedor").value,
@@ -1766,7 +1944,7 @@ window.recuperarRascunho = () => {
     document.getElementById("nomePerfume").value = d.nomePerfume || "";
     document.getElementById("marcaEssencia").value = d.marcaEssencia || "";
     document.getElementById("concentracao").value = d.concentracao || "";
-    notasSelecionadas = Array.isArray(d.notasOlfativas) ? d.notasOlfativas.slice() : []; // NOVO
+    notasSelecionadas = Array.isArray(d.notasOlfativas) ? d.notasOlfativas.slice() : [];
     renderChipsNotas();
     document.getElementById("tipoOndeEncontrar").value = d.tipoOndeEncontrar || "";
     toggleOndeEncontrar();
@@ -1892,6 +2070,10 @@ onAuthStateChanged(auth, async (user) => {
           notificar("🚫 Acesso banido", "Seu acesso foi banido pelo admin.");
         }
       }
+      // Atualiza modal de perfil aberto, se for o meu
+      if (!document.getElementById("modalPerfil").classList.contains("hidden")) {
+        // não força reabrir; deixa o próximo abrirPerfil puxar dados frescos
+      }
     });
   } catch (err) {
     console.error("Erro auth:", err);
@@ -2007,7 +2189,7 @@ function escutarMembrosAdmin() {
     renderLancamentos(true);
     renderMinhas(true);
     renderFavoritos(true);
-    renderRankingMensal(); // NOVO
+    renderRankingMensal();
     if (souAdmin() && !document.getElementById("aba-admin").classList.contains("hidden")) {
       renderAdminFromCache();
     }
@@ -2079,7 +2261,6 @@ async function salvarVendedorNoCatalogo(nome, whatsapp) {
   } catch(e) { console.warn("Erro salvar vendedor:", e); }
 }
 
-// NOVO: prioridade de notificações sociais
 function prioridadeNotifSocial(tipo) {
   return { resposta: 4, comentario: 3, avaliacao: 2, curtida: 1, favorito: 1 }[tipo] || 0;
 }
@@ -2146,7 +2327,6 @@ window.verificarNotificacoes = () => {
       if (!lidas.includes(key)) sociais.push({ tipo: 'resposta', key, perfume: p, quem: c.autor, texto: `${c.autor} respondeu seu comentário em "${p.nomePerfume}": ${c.texto.slice(0,50)}...` });
     });
   });
-  // NOVO: ordenar por prioridade
   sociais.sort((a, b) => prioridadeNotifSocial(b.tipo) - prioridadeNotifSocial(a.tipo));
   const total = metas.length + sociais.length;
   const badge = document.getElementById("notifBadge");
@@ -2204,7 +2384,7 @@ function escutarLancamentos() {
     todosPerfumes = snap.docs.map(d => ({ id: d.id, ...d.data() }));
     renderLancamentos();
     renderTopSemana();
-    renderRankingMensal(); // NOVO
+    renderRankingMensal();
     renderMinhas();
     verificarNotificacoes();
     if (souAdmin()) migrarMembrosAntigos().catch(e => console.warn(e));
@@ -2223,7 +2403,6 @@ function timestampUltimaAtividade(p) {
   return ultimo;
 }
 
-// NOVO: ranking mensal de contribuidores
 window.renderRankingMensal = () => {
   const agora = new Date();
   const inicioMes = new Date(agora.getFullYear(), agora.getMonth(), 1).getTime();
@@ -2332,7 +2511,6 @@ window.renderLancamentos = (manterPagina = false) => {
   const generoFiltro = document.getElementById("filtroGenero").value;
   const ordem = document.getElementById("filtroOrdem").value;
   let filtrados = todosPerfumes.filter(p => {
-    // NOVO: busca inclui notasOlfativas
     const buscaEmNotas = (p.notasOlfativas || []).join(" ").toLowerCase();
     const matchBusca = !busca
       || (p.nomePerfume || "").toLowerCase().includes(busca)
@@ -2342,13 +2520,12 @@ window.renderLancamentos = (manterPagina = false) => {
     const matchGenero = !generoFiltro || p.genero === generoFiltro;
     return matchBusca && matchGenero;
   });
-  // NOVO: aplicar chip de filtro
   if (chipFiltroAtivo === "prontos") filtrados = filtrados.filter(p => p.statusContratipo === "pronto");
   else if (chipFiltroAtivo === "macerando") filtrados = filtrados.filter(p => p.statusContratipo === "em_andamento");
   else if (chipFiltroAtivo === "aprovados") filtrados = filtrados.filter(p => p.resultado === "aprovado");
   if (ordem === "curtidos") filtrados.sort((a,b) => (b.curtidas?.length||0) - (a.curtidas?.length||0));
   else if (ordem === "salvos") filtrados.sort((a,b) => (b.favoritos?.length||0) - (a.favoritos?.length||0));
-  else if (ordem === "comentados") filtrados.sort((a,b) => (b.comentarios?.length||0) - (a.comentarios?.length||0)); // NOVO
+  else if (ordem === "comentados") filtrados.sort((a,b) => (b.comentarios?.length||0) - (a.comentarios?.length||0));
   else if (ordem === "atividade") filtrados.sort((a,b) => timestampUltimaAtividade(b) - timestampUltimaAtividade(a));
   else if (ordem === "melhores-autor") {
     filtrados = filtrados.filter(p => p.statusContratipo === "pronto");
@@ -2399,11 +2576,9 @@ window.renderMinhas = (manterPagina = false) => {
     ? paginaItens.map(p => cardPreviaHTML(p)).join("")
     : '<div class="empty">Você ainda não cadastrou nada. Vá em "Novo Perfume" ✨</div>';
   renderPaginacao(document.getElementById("paginacaoMinhasTopo"), document.getElementById("paginacaoMinhasBase"), itens.length, paginas.minhas, totalPaginas, "mudarPaginaMinhas(-1)", "mudarPaginaMinhas(1)");
-  // NOVO: renderizar onboarding
   renderOnboarding();
 };
 
-// NOVO: onboarding para primeiro acesso
 function renderOnboarding() {
   if (!usuarioAtual) return;
   const cont = document.getElementById("onboardingContainer");
@@ -2437,10 +2612,10 @@ function renderOnboarding() {
         <div class="onboarding-passo">
           <div class="num">3</div>
           <div class="info">
-            <strong>Personalize seu perfil</strong>
-            <small>Fixe um perfume destaque e veja suas estatísticas</small>
+            <strong>Complete seu perfil</strong>
+            <small>Adicione localização, redes sociais e seus insumos</small>
           </div>
-          <button onclick="abrirMeuPerfil()">Meu perfil</button>
+          <button onclick="abrirEditarPerfil()">Editar perfil</button>
         </div>
       </div>
       <button class="onboarding-dispensar" onclick="dispensarOnboarding()">Dispensar</button>
@@ -2521,13 +2696,11 @@ function cardPreviaHTML(p, mostrarNotaPessoal = false) {
   const statusAutor = statusAutorDoPerfume(p);
   const autorBanidoHTML = statusAutor === "bloqueado" ? `<span class="tag banido" title="O autor deste perfume foi banido">🔒 Autor Banido</span>` : "";
 
-  // NOVO: selo admin/super do autor
   const adminStatus = statusAdminDoAutor(p.autorEmail);
   const seloAutor = adminStatus === 'super' ? '<span class="selo-autor" title="Super Admin">👑</span>'
                  : adminStatus === 'admin' ? '<span class="selo-autor" title="Admin">🛡️</span>'
                  : '';
 
-  // NOVO: último comentário visível
   const comentariosVisiveis = (p.comentarios || []).filter(c => !c.oculto);
   const ultimoComent = comentariosVisiveis.length > 0 ? comentariosVisiveis[comentariosVisiveis.length - 1] : null;
   const ultimoComentHTML = ultimoComent ? `
@@ -2536,14 +2709,12 @@ function cardPreviaHTML(p, mostrarNotaPessoal = false) {
     </div>
   ` : "";
 
-  // NOVO: nota pessoal em favoritos
   let notaPessoalHTML = "";
   if (mostrarNotaPessoal && usuarioAtual) {
     const nota = (p.favoritosNotas || {})[usuarioAtual.email];
     if (nota) notaPessoalHTML = `<div class="nota-pessoal">📝 "${escapeHtml(nota)}"</div>`;
   }
 
-  // NOVO: notas olfativas
   const notasHTML = (p.notasOlfativas && p.notasOlfativas.length > 0)
     ? p.notasOlfativas.slice(0, 5).map(n => `<span class="tag nota-olf">${escapeHtml(n)}</span>`).join("")
     : "";
@@ -2582,7 +2753,6 @@ function cardPreviaHTML(p, mostrarNotaPessoal = false) {
 }
 
 function renderSimilares(p) {
-  // NOVO: match de notas olfativas pesa mais
   const notasP = (p.notasOlfativas || []).map(n => n.toLowerCase());
   const candidatos = todosPerfumes.filter(x => {
     if (x.id === p.id || x.statusContratipo !== "pronto") return false;
@@ -2747,7 +2917,6 @@ window.abrirDetalhes = (id) => {
     ? `<div class="aviso-autor-banido">🔒 <strong>Atenção:</strong> O autor deste perfume foi banido pelo admin. O conteúdo continua visível, mas o autor não tem mais acesso.</div>`
     : "";
 
-  // NOVO: botão fixar destaque
   const jaEDestaque = membroAtual?.perfumeDestaqueId === p.id;
   const botaoFixar = isDono ? `
     <button class="btn-fixar ${jaEDestaque?'ativo':''}" onclick="toggleDestaque('${p.id}')" title="${jaEDestaque?'Remover destaque':'Fixar como destaque do perfil'}">
@@ -2755,7 +2924,6 @@ window.abrirDetalhes = (id) => {
     </button>
   ` : "";
 
-  // NOVO: notas olfativas no modal
   const notasHTML = (p.notasOlfativas && p.notasOlfativas.length > 0) ? `
     <div class="detalhe-info" style="margin-top: 15px;">
       <strong>Notas Olfativas:</strong>
@@ -2895,7 +3063,6 @@ window.abrirDetalhes = (id) => {
   }
 };
 
-// NOVO: fixar/desafixar perfume destaque
 window.toggleDestaque = async (perfumeId) => {
   if (!usuarioAtual) return;
   const p = todosPerfumes.find(x => x.id === perfumeId);
@@ -2965,7 +3132,7 @@ window.duplicarPerfume = (id) => {
   document.getElementById("nomePerfume").value = (p.nomePerfume || "") + " (cópia)";
   document.getElementById("marcaEssencia").value = p.marcaEssencia || "";
   document.getElementById("concentracao").value = p.concentracao || "";
-  notasSelecionadas = Array.isArray(p.notasOlfativas) ? p.notasOlfativas.slice() : []; // NOVO
+  notasSelecionadas = Array.isArray(p.notasOlfativas) ? p.notasOlfativas.slice() : [];
   renderChipsNotas();
   document.getElementById("tipoOndeEncontrar").value = p.tipoOnde || "";
   toggleOndeEncontrar();
@@ -3044,6 +3211,7 @@ window.confirmarExclusao = async () => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     if (!document.getElementById('modalConfirmarExclusao').classList.contains('hidden')) fecharModalExclusao();
+    else if (!document.getElementById('modalEditarPerfil').classList.contains('hidden')) fecharModalEditarPerfil();
     else if (!document.getElementById('modalDetalhes').classList.contains('hidden')) fecharModalDetalhes();
     else if (!document.getElementById('modalBase').classList.contains('hidden')) fecharModalBase();
     else if (!document.getElementById('modalPerfil').classList.contains('hidden')) fecharModalPerfil();
@@ -3074,7 +3242,225 @@ window.abrirModalBase = (id) => {
 
 window.fecharModalBase = () => document.getElementById("modalBase").classList.add("hidden");
 
-// NOVO: gráfico de barras horizontais
+// NOVO: helpers de URL de redes sociais
+function gerarInstagramUrl(usuario) {
+  if (!usuario) return null;
+  let limpo = String(usuario).trim().replace(/^@/, "");
+  limpo = limpo.replace(/^https?:\/\/(www\.)?instagram\.com\//i, "").replace(/\/$/, "");
+  if (!limpo) return null;
+  return "https://instagram.com/" + limpo;
+}
+function gerarFacebookUrl(valor) {
+  if (!valor) return null;
+  const v = String(valor).trim();
+  if (/^https?:\/\//i.test(v)) return v;
+  const limpo = v.replace(/^@/, "");
+  if (!limpo) return null;
+  return "https://facebook.com/" + limpo;
+}
+function gerarTelegramUrl(valor) {
+  if (!valor) return null;
+  const v = String(valor).trim();
+  if (/^https?:\/\//i.test(v)) return v;
+  const semArroba = v.replace(/^@/, "").replace(/\D/g, "");
+  if (/^\+?\d{8,15}$/.test(v.replace(/[^\d+]/g, ''))) {
+    return "https://t.me/+" + semArroba;
+  }
+  const username = v.replace(/^@/, "").replace(/[^a-zA-Z0-9_]/g, "");
+  if (!username) return null;
+  return "https://t.me/" + username;
+}
+function gerarWhatsappUrl(numero) {
+  if (!numero) return null;
+  const digitos = String(numero).replace(/\D/g, "");
+  if (digitos.length < 10) return null;
+  return "https://wa.me/55" + digitos;
+}
+
+window.abrirEditarPerfil = () => {
+  if (!usuarioAtual || !membroAtual) return;
+  document.getElementById("perfilCidade").value = membroAtual.cidade || "";
+  const selUf = document.getElementById("perfilEstado");
+  selUf.innerHTML = '<option value="">--</option>' + UFS.map(uf => `<option value="${uf}">${uf}</option>`).join("");
+  selUf.value = membroAtual.estado || "";
+  document.getElementById("perfilInstagram").value = membroAtual.instagram || "";
+  document.getElementById("perfilFacebook").value = membroAtual.facebook || "";
+  document.getElementById("perfilTelegram").value = membroAtual.telegram || "";
+  document.getElementById("perfilWhatsapp").value = membroAtual.whatsapp || "";
+  document.getElementById("perfilLojaNome").value = membroAtual.lojaNome || "";
+  document.getElementById("perfilLojaUrl").value = membroAtual.lojaUrl || "";
+
+  const lista = document.getElementById("listaInsumosForm");
+  lista.innerHTML = "";
+  const insumos = Array.isArray(membroAtual.insumos) ? membroAtual.insumos : [];
+  if (insumos.length === 0) adicionarInsumo();
+  else insumos.forEach(ins => adicionarInsumo(ins.nome, ins.link));
+
+  document.getElementById("modalEditarPerfil").classList.remove("hidden");
+};
+
+window.fecharModalEditarPerfil = () => {
+  document.getElementById("modalEditarPerfil").classList.add("hidden");
+};
+
+window.adicionarInsumo = (nome = "", link = "") => {
+  const lista = document.getElementById("listaInsumosForm");
+  if (lista.children.length >= MAX_INSUMOS) { mostrarToast("Limite de " + MAX_INSUMOS + " insumos atingido", "⚠️"); return; }
+  const linha = document.createElement("div");
+  linha.className = "insumo-linha";
+  linha.innerHTML = `
+    <input type="text" class="insumo-nome" maxlength="60" placeholder="Nome do insumo" value="${escapeHtml(nome)}" />
+    <input type="text" class="insumo-link" maxlength="300" placeholder="Onde encontrar (link)" value="${escapeHtml(link)}" />
+    <button type="button" class="btn-remover" onclick="this.parentElement.remove()">×</button>
+  `;
+  lista.appendChild(linha);
+};
+
+document.getElementById("formEditarPerfil").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (!usuarioAtual) return;
+
+  const cidade = document.getElementById("perfilCidade").value.trim();
+  const estado = document.getElementById("perfilEstado").value;
+  const instagram = document.getElementById("perfilInstagram").value.trim();
+  const facebook = document.getElementById("perfilFacebook").value.trim();
+  const telegram = document.getElementById("perfilTelegram").value.trim();
+  const whatsapp = document.getElementById("perfilWhatsapp").value.replace(/\D/g, "");
+  const lojaNome = document.getElementById("perfilLojaNome").value.trim();
+  const lojaUrlRaw = document.getElementById("perfilLojaUrl").value.trim();
+  const lojaUrl = lojaUrlRaw ? normalizarUrl(lojaUrlRaw) : null;
+
+  if (whatsapp && whatsapp.length < 10) { alert("WhatsApp precisa ter DDD + número (10 ou 11 dígitos)."); return; }
+  if (lojaUrlRaw && !lojaUrl) { alert("Link da loja inválido."); return; }
+
+  const insumos = [];
+  document.querySelectorAll("#listaInsumosForm .insumo-linha").forEach(linha => {
+    const nome = linha.querySelector(".insumo-nome").value.trim();
+    const linkRaw = linha.querySelector(".insumo-link").value.trim();
+    if (!nome) return;
+    const link = linkRaw ? normalizarUrl(linkRaw) : null;
+    insumos.push({ nome, link });
+  });
+
+  const dados = {
+    cidade: cidade || null,
+    estado: estado || null,
+    instagram: instagram || null,
+    facebook: facebook || null,
+    telegram: telegram || null,
+    whatsapp: whatsapp || null,
+    lojaNome: lojaNome || null,
+    lojaUrl: lojaUrl || null,
+    insumos: insumos
+  };
+
+  try {
+    await updateDoc(doc(db, "membros", usuarioAtual.email), dados);
+    membroAtual = { ...membroAtual, ...dados };
+    mostrarToast("Perfil atualizado!", "✅");
+    fecharModalEditarPerfil();
+    if (!document.getElementById("modalPerfil").classList.contains("hidden")) {
+      abrirPerfil(usuarioAtual.email);
+    }
+  } catch(err) {
+    alert("Erro: " + err.message);
+  }
+});
+
+// NOVO: gerar HTML do card "Sobre mim"
+function renderSobreMim(membro) {
+  if (!membro) return "";
+  const temLocal = membro.cidade || membro.estado;
+  const temRede = membro.instagram || membro.facebook || membro.telegram || membro.whatsapp;
+  const temLoja = membro.lojaNome || membro.lojaUrl;
+  const temInsumos = Array.isArray(membro.insumos) && membro.insumos.length > 0;
+  if (!temLocal && !temRede && !temLoja && !temInsumos) return "";
+
+  let localHTML = "";
+  if (temLocal) {
+    const partes = [];
+    if (membro.cidade) partes.push(escapeHtml(membro.cidade));
+    if (membro.estado) partes.push(escapeHtml(membro.estado));
+    localHTML = `
+      <div class="sobre-mim-secao">
+        <div class="sobre-mim-label">📍 Localização</div>
+        <div class="sobre-mim-local">${partes.join(" - ")}</div>
+      </div>
+    `;
+  }
+
+  let redesHTML = "";
+  if (temRede) {
+    const botoes = [];
+    if (membro.instagram) {
+      const url = gerarInstagramUrl(membro.instagram);
+      if (url) botoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn instagram">📷 Instagram</a>`);
+    }
+    if (membro.facebook) {
+      const url = gerarFacebookUrl(membro.facebook);
+      if (url) botoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn facebook">📘 Facebook</a>`);
+    }
+    if (membro.whatsapp) {
+      const url = gerarWhatsappUrl(membro.whatsapp);
+      if (url) botoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp">💬 WhatsApp</a>`);
+    }
+    if (membro.telegram) {
+      const url = gerarTelegramUrl(membro.telegram);
+      if (url) botoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn telegram">✈️ Telegram</a>`);
+    }
+    if (botoes.length > 0) {
+      redesHTML = `
+        <div class="sobre-mim-secao">
+          <div class="sobre-mim-label">🌐 Redes sociais</div>
+          <div class="sobre-mim-social">${botoes.join("")}</div>
+        </div>
+      `;
+    }
+  }
+
+  let lojaHTML = "";
+  if (temLoja) {
+    const nomeExibido = membro.lojaNome || "Minha loja";
+    const url = membro.lojaUrl ? normalizarUrl(membro.lojaUrl) : null;
+    lojaHTML = `
+      <div class="sobre-mim-secao">
+        <div class="sobre-mim-label">🛒 Minha loja</div>
+        ${url
+          ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn loja">🛍️ ${escapeHtml(nomeExibido)}</a>`
+          : `<span class="social-btn loja" style="cursor: default;">🛍️ ${escapeHtml(nomeExibido)}</span>`
+        }
+      </div>
+    `;
+  }
+
+  let insumosHTML = "";
+  if (temInsumos) {
+    insumosHTML = `
+      <div class="sobre-mim-secao">
+        <div class="sobre-mim-label">🧪 Insumos que uso</div>
+        <div class="sobre-mim-insumos">
+          ${membro.insumos.map(ins => {
+            const url = ins.link ? normalizarUrl(ins.link) : null;
+            return url
+              ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="insumo-tag">${escapeHtml(ins.nome)} 🔗</a>`
+              : `<span class="insumo-tag sem-link">${escapeHtml(ins.nome)}</span>`;
+          }).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="sobre-mim-card">
+      <h4>👤 Sobre mim</h4>
+      ${localHTML}
+      ${redesHTML}
+      ${lojaHTML}
+      ${insumosHTML}
+    </div>
+  `;
+}
+
 function renderBarraHorizontal(label, valor, max, cor) {
   const pct = max > 0 ? Math.round((valor / max) * 100) : 0;
   return `
@@ -3120,7 +3506,6 @@ window.abrirPerfil = (email) => {
     </div>
   ` : "";
 
-  // NOVO: destaque
   const membroDoPerfil = todosMembros.find(m => m.email === email);
   const destaqueId = membroDoPerfil?.perfumeDestaqueId;
   const destaque = destaqueId ? perfumesDoAutor.find(p => p.id === destaqueId) : null;
@@ -3133,7 +3518,9 @@ window.abrirPerfil = (email) => {
     </div>
   ` : "";
 
-  // NOVO: gráfico por gênero
+  // NOVO: card Sobre mim
+  const sobreMimHTML = renderSobreMim(membroDoPerfil);
+
   const porGenero = { Feminino: 0, Masculino: 0, Compartilhado: 0 };
   perfumesDoAutor.forEach(p => { if (porGenero[p.genero] !== undefined) porGenero[p.genero]++; });
   const maxGenero = Math.max(porGenero.Feminino, porGenero.Masculino, porGenero.Compartilhado, 1);
@@ -3146,7 +3533,6 @@ window.abrirPerfil = (email) => {
     </div>
   `;
 
-  // NOVO: evolução mensal (últimos 6 meses)
   const agora = new Date();
   const ultimos6 = [];
   for (let i = 5; i >= 0; i--) {
@@ -3197,17 +3583,28 @@ window.abrirPerfil = (email) => {
   const statusAutor = statusAutorDoPerfume(perfumesDoAutor[0]);
   const avisoBan = statusAutor === "bloqueado" ? `<div class="aviso-autor-banido">🔒 Este usuário está banido pelo admin. Seus perfumes continuam visíveis, mas ele não tem mais acesso.</div>` : "";
 
-  // NOVO: selo admin no perfil
   const adminStatus = statusAdminDoAutor(email);
   const seloAdminPerfil = adminStatus === 'super' ? '<span class="tag-super">👑 Super Admin</span>'
                         : adminStatus === 'admin' ? '<span class="tag-admin">🛡️ Admin</span>'
                         : '';
 
+  // NOVO: selo "Perfil completo"
+  const completo = perfilEstaCompleto(membroDoPerfil);
+  const seloCompleto = completo ? '<span class="selo-perfil-completo">✅ Perfil completo</span>' : '';
+
+  // NOVO: botão editar perfil (só no próprio perfil)
+  const souEuMesmo = usuarioAtual && usuarioAtual.email === email;
+  const botaoEditar = souEuMesmo ? `<button class="btn-editar-perfil" onclick="fecharModalPerfil(); abrirEditarPerfil()">✏️ Editar perfil</button>` : "";
+
   document.getElementById("perfilConteudo").innerHTML = `
+    <div class="modal-topo-acoes">
+      ${botaoEditar}
+      <button class="btn-compartilhar" onclick="compartilharPerfil('${escapeHtml(email)}')">🔗 Compartilhar Perfil</button>
+    </div>
     <div class="perfil-header">
       ${autorFoto ? `<img src="${autorFoto}" alt="" />` : `<div class="avatar-fallback" style="width:80px;height:80px;font-size:32px;">👤</div>`}
       <div>
-        <h2>${escapeHtml(autorNome)} ${seloAdminPerfil}</h2>
+        <h2>${escapeHtml(autorNome)} ${seloAdminPerfil}${seloCompleto}</h2>
         <small>${escapeHtml(email)}</small>
       </div>
     </div>
@@ -3222,6 +3619,7 @@ window.abrirPerfil = (email) => {
       ${mediaMaceracao > 0 ? `<div><strong>${mediaMaceracao}d</strong><span>Média Maceração</span></div>` : ''}
       ${maxMaceracao > 0 ? `<div><strong>${maxMaceracao}d</strong><span>Maior</span></div>` : ''}
     </div>
+    ${sobreMimHTML}
     ${destaqueHTML}
     ${graficoGeneroHTML}
     ${graficoMesesHTML}
@@ -3230,9 +3628,6 @@ window.abrirPerfil = (email) => {
       ${listaHTML || '<div style="font-size:13px; color:#8b8b9e; text-align:center; padding: 20px;">Nenhum outro perfume.</div>'}
     </div>
     ${recomendacoesHTML}
-    <div style="margin-top: 20px; text-align: center;">
-      <button class="btn-compartilhar" onclick="compartilharPerfil('${escapeHtml(email)}')">🔗 Compartilhar Perfil</button>
-    </div>
   `;
   document.getElementById("modalPerfil").classList.remove("hidden");
 };
@@ -3261,7 +3656,6 @@ window.fecharModalDetalhes = () => {
   }
 };
 
-// NOVO: toggleFavorito com nota pessoal opcional
 window.toggleFavorito = async (id) => {
   if (!usuarioAtual) return;
   const p = todosPerfumes.find(x => x.id === id);
@@ -3269,7 +3663,6 @@ window.toggleFavorito = async (id) => {
   const isFav = favoritos.includes(usuarioAtual.email);
   try {
     if (isFav) {
-      // Remover favorito
       const notasAtuais = { ...(p.favoritosNotas || {}) };
       delete notasAtuais[usuarioAtual.email];
       await updateDoc(doc(db, "perfumes", id), {
@@ -3278,7 +3671,6 @@ window.toggleFavorito = async (id) => {
       });
       mostrarToast("Removido dos favoritos", "☆");
     } else {
-      // Adicionar favorito — pede nota pessoal opcional
       const nota = prompt(`Por que você salvou "${p.nomePerfume}"?\n(nota pessoal opcional — deixe em branco para pular)`, "");
       const notasAtuais = { ...(p.favoritosNotas || {}) };
       if (nota && nota.trim()) notasAtuais[usuarioAtual.email] = nota.trim();
@@ -3510,7 +3902,7 @@ document.getElementById("formPerfume").addEventListener("submit", async (e) => {
       nomePerfume: document.getElementById("nomePerfume").value.trim(),
       marcaEssencia: marcaDigitada,
       concentracao: document.getElementById("concentracao").value.trim(),
-      notasOlfativas: notasSelecionadas.slice(), // NOVO
+      notasOlfativas: notasSelecionadas.slice(),
       tipoOnde, linkSite, nomeVendedor, whatsappVendedor, manipulado: manipuladoRadio.value,
       notaSimilaridade: sim, notaProjecao: proj, notaFixacao: fix, notaMedia: isEmAndamento ? 0 : (sim + proj + fix) / 3,
       baseId: baseSelecionada, baseNome: BASES.find(b => b.id === baseSelecionada)?.nome || "",
@@ -3577,7 +3969,7 @@ window.abrirEdicao = async (id) => {
   document.getElementById("nomePerfume").value = nomeFormatado;
   document.getElementById("marcaEssencia").value = p.marcaEssencia || "";
   document.getElementById("concentracao").value = p.concentracao || "";
-  notasSelecionadas = Array.isArray(p.notasOlfativas) ? p.notasOlfativas.slice() : []; // NOVO
+  notasSelecionadas = Array.isArray(p.notasOlfativas) ? p.notasOlfativas.slice() : [];
   renderChipsNotas();
   document.getElementById("tipoOndeEncontrar").value = p.tipoOnde || "";
   toggleOndeEncontrar();
@@ -3624,7 +4016,7 @@ window.cancelarEdicao = () => {
   document.getElementById("avisoDiasAuto").textContent = "";
   document.getElementById("avisoDuplicata").classList.remove("visivel");
   baseSelecionada = ""; renderBases(); toggleOndeEncontrar(); toggleStatusForm();
-  notasSelecionadas = []; renderChipsNotas(); // NOVO
+  notasSelecionadas = []; renderChipsNotas();
   document.getElementById("valSimilaridade").textContent = "5";
   document.getElementById("valProjecao").textContent = "5";
   document.getElementById("valFixacao").textContent = "5";
@@ -3637,11 +4029,9 @@ window.renderAdmin = async () => {
   renderAdminFromCache();
 };
 
-// NOVO: dashboard admin com gráficos
 function renderAdminGraficos() {
   const cont = document.getElementById("adminGraficos");
   if (!cont) return;
-  // Perfumes por semana (últimas 8 semanas)
   const agora = new Date();
   const semanas = [];
   for (let i = 7; i >= 0; i--) {
@@ -3661,7 +4051,6 @@ function renderAdminGraficos() {
   });
   const maxSem = Math.max(...semanas.map(s => s.qtd), 1);
 
-  // Novos membros por mês (últimos 6 meses)
   const meses = [];
   for (let i = 5; i >= 0; i--) {
     const d = new Date(agora.getFullYear(), agora.getMonth() - i, 1);
@@ -3675,7 +4064,6 @@ function renderAdminGraficos() {
   });
   const maxMes = Math.max(...meses.map(m => m.qtd), 1);
 
-  // Tempo médio de aprovação (em dias) das últimas aprovações
   const aprovadosComTempo = todosMembros
     .filter(m => m.solicitadoEm?.toDate && m.aprovadoEm?.toDate)
     .map(m => (m.aprovadoEm.toDate() - m.solicitadoEm.toDate()) / (1000 * 60 * 60 * 24));
@@ -3708,7 +4096,7 @@ function renderAdminFromCache() {
   document.getElementById("adminTotalPerfumes").textContent = totalPerfumes;
   document.getElementById("adminTotalProntos").textContent = totalProntos;
   document.getElementById("adminTotalMacerando").textContent = totalPerfumes - totalProntos;
-  renderAdminGraficos(); // NOVO
+  renderAdminGraficos();
   const pendentes = todosMembros.filter(m => m.status === "pendente");
   const contSol = document.getElementById("adminSolicitacoes");
   contSol.innerHTML = pendentes.length === 0
