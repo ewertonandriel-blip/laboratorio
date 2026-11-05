@@ -407,28 +407,37 @@
     padding: 3px 10px; border-radius: 50px; letter-spacing: 0.5px;
   }
 
-  /* NOVO: card "Sobre mim" mais compacto e horizontal */
+  /* Card "Sobre mim" com labels claros e layout em linhas */
   .sobre-mim-card {
     background: linear-gradient(135deg, rgba(77,171,247,0.06), rgba(233,69,96,0.03));
     border: 1px solid rgba(77,171,247,0.2); border-radius: 16px;
-    padding: 16px 20px; margin-bottom: 20px;
+    padding: 18px 22px; margin-bottom: 20px;
   }
-  .sobre-mim-linha {
-    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-    padding: 8px 0;
+  .sobre-mim-card h4 {
+    font-size: 15px; color: #4dabf7; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
   }
-  .sobre-mim-linha:not(:last-child) {
+  .sobre-mim-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 12px;
+    padding: 10px 0;
+    align-items: flex-start;
+  }
+  .sobre-mim-item:not(:last-child) {
     border-bottom: 1px solid rgba(255,255,255,0.04);
   }
-  .sobre-mim-linha .icone-linha {
-    font-size: 16px; flex-shrink: 0;
+  .sobre-mim-label {
+    font-size: 12px; color: #8b8b9e; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.3px;
+    display: flex; align-items: center; gap: 6px;
+    padding-top: 4px;
   }
-  .sobre-mim-local {
-    font-size: 14px; color: #e8e8e8; font-weight: 500;
+  .sobre-mim-valor {
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    font-size: 14px; color: #e8e8e8; line-height: 1.5;
   }
-  .sobre-mim-taglist {
-    display: flex; flex-wrap: wrap; gap: 6px; flex: 1;
-  }
+
   .social-btn {
     display: inline-flex; align-items: center; gap: 5px;
     padding: 6px 12px; border-radius: 8px; text-decoration: none;
@@ -782,6 +791,7 @@
     .perfil-form-grid { grid-template-columns: 1fr; }
     .insumo-linha { grid-template-columns: 1fr; }
     .insumo-linha .btn-remover { width: 100%; padding: 8px; font-size: 16px; }
+    .sobre-mim-item { grid-template-columns: 1fr; gap: 4px; padding: 12px 0; }
   }
 </style>
 </head>
@@ -3342,7 +3352,7 @@ document.getElementById("formEditarPerfil").addEventListener("submit", async (e)
   }
 });
 
-// NOVO: card "Sobre mim" compacto e horizontal
+// NOVO: card "Sobre mim" com labels explícitos por seção
 function renderSobreMim(membro) {
   if (!membro) return "";
   const temLocal = membro.cidade || membro.estado;
@@ -3357,48 +3367,57 @@ function renderSobreMim(membro) {
     if (membro.cidade) partes.push(escapeHtml(membro.cidade));
     if (membro.estado) partes.push(escapeHtml(membro.estado));
     localHTML = `
-      <div class="sobre-mim-linha">
-        <span class="icone-linha">📍</span>
-        <span class="sobre-mim-local">${partes.join(" - ")}</span>
+      <div class="sobre-mim-item">
+        <div class="sobre-mim-label">📍 Localização</div>
+        <div class="sobre-mim-valor">${partes.join(" - ")}</div>
       </div>
     `;
   }
 
   let redesHTML = "";
-  const redesBotoes = [];
-  if (membro.instagram) {
-    const url = gerarInstagramUrl(membro.instagram);
-    if (url) redesBotoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn instagram">📷 Instagram</a>`);
-  }
-  if (membro.facebook) {
-    const url = gerarFacebookUrl(membro.facebook);
-    if (url) redesBotoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn facebook">📘 Facebook</a>`);
-  }
-  if (membro.whatsapp) {
-    const url = gerarWhatsappUrl(membro.whatsapp);
-    if (url) redesBotoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp">💬 WhatsApp</a>`);
-  }
-  if (membro.telegram) {
-    const url = gerarTelegramUrl(membro.telegram);
-    if (url) redesBotoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn telegram">✈️ Telegram</a>`);
-  }
-  if (redesBotoes.length > 0 || temLoja) {
-    if (temLoja) {
-      const nomeExibido = membro.lojaNome || "Minha loja";
-      const url = membro.lojaUrl ? normalizarUrl(membro.lojaUrl) : null;
-      redesBotoes.push(
-        url
-          ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn loja">🛍️ ${escapeHtml(nomeExibido)}</a>`
-          : `<span class="social-btn loja" style="cursor: default;">🛍️ ${escapeHtml(nomeExibido)}</span>`
-      );
+  if (temRede) {
+    const botoes = [];
+    if (membro.instagram) {
+      const url = gerarInstagramUrl(membro.instagram);
+      if (url) botoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn instagram">📷 Instagram</a>`);
     }
-    if (redesBotoes.length > 0) {
+    if (membro.facebook) {
+      const url = gerarFacebookUrl(membro.facebook);
+      if (url) botoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn facebook">📘 Facebook</a>`);
+    }
+    if (membro.whatsapp) {
+      const url = gerarWhatsappUrl(membro.whatsapp);
+      if (url) botoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp">💬 WhatsApp</a>`);
+    }
+    if (membro.telegram) {
+      const url = gerarTelegramUrl(membro.telegram);
+      if (url) botoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn telegram">✈️ Telegram</a>`);
+    }
+    if (botoes.length > 0) {
       redesHTML = `
-        <div class="sobre-mim-linha">
-          <div class="sobre-mim-taglist">${redesBotoes.join("")}</div>
+        <div class="sobre-mim-item">
+          <div class="sobre-mim-label">🌐 Redes sociais</div>
+          <div class="sobre-mim-valor">${botoes.join("")}</div>
         </div>
       `;
     }
+  }
+
+  let lojaHTML = "";
+  if (temLoja) {
+    const nomeExibido = membro.lojaNome || "Minha loja";
+    const url = membro.lojaUrl ? normalizarUrl(membro.lojaUrl) : null;
+    lojaHTML = `
+      <div class="sobre-mim-item">
+        <div class="sobre-mim-label">🛒 Loja</div>
+        <div class="sobre-mim-valor">
+          ${url
+            ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn loja">🛍️ ${escapeHtml(nomeExibido)}</a>`
+            : `<span class="social-btn loja" style="cursor: default;">🛍️ ${escapeHtml(nomeExibido)}</span>`
+          }
+        </div>
+      </div>
+    `;
   }
 
   let insumosHTML = "";
@@ -3410,17 +3429,19 @@ function renderSobreMim(membro) {
         : `<span class="insumo-tag sem-link">${escapeHtml(ins.nome)}</span>`;
     }).join("");
     insumosHTML = `
-      <div class="sobre-mim-linha">
-        <span class="icone-linha">🧪</span>
-        <div class="sobre-mim-taglist">${pills}</div>
+      <div class="sobre-mim-item">
+        <div class="sobre-mim-label">🧪 Insumos</div>
+        <div class="sobre-mim-valor">${pills}</div>
       </div>
     `;
   }
 
   return `
     <div class="sobre-mim-card">
+      <h4>👤 Sobre mim</h4>
       ${localHTML}
       ${redesHTML}
+      ${lojaHTML}
       ${insumosHTML}
     </div>
   `;
@@ -3483,7 +3504,6 @@ window.abrirPerfil = (email) => {
     </div>
   ` : "";
 
-  // Card Sobre mim (compacto)
   const sobreMimHTML = renderSobreMim(membroDoPerfil);
 
   let recomendacoesHTML = "";
