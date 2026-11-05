@@ -264,7 +264,6 @@
   .aviso-duplicata { background: rgba(77,171,247,0.08); border: 1px solid rgba(77,171,247,0.25); border-radius: 10px; padding: 10px 14px; font-size: 13px; color: #4dabf7; margin-top: 8px; display: none; align-items: center; gap: 8px;}
   .aviso-duplicata.visivel { display: flex; }
 
-  /* NOVO: chips de filtro rápido */
   .chips-filtro {
     display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;
   }
@@ -277,7 +276,6 @@
   .chip:hover { background: rgba(255,255,255,0.05); color: #fff; }
   .chip.ativo { background: rgba(77,171,247,0.15); color: #4dabf7; border-color: #4dabf7; }
 
-  /* NOVO: onboarding */
   .onboarding-card {
     background: linear-gradient(135deg, rgba(77,171,247,0.1), rgba(233,69,96,0.05));
     border: 1px solid rgba(77,171,247,0.3); border-radius: 20px;
@@ -316,7 +314,6 @@
   }
   .onboarding-dispensar:hover { background: rgba(255,255,255,0.05); color: #fff; }
 
-  /* NOVO: chips de notas olfativas */
   .chips-notas { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
   .chip-nota {
     padding: 6px 12px; border-radius: 50px;
@@ -336,20 +333,17 @@
   }
   .notas-input-wrapper button:hover { background: #4dabf7; color: #fff; }
 
-  /* NOVO: nota pessoal em favoritos */
   .nota-pessoal {
     background: rgba(245,179,1,0.08); border-left: 3px solid #f5b301;
     padding: 8px 12px; border-radius: 8px; font-size: 13px; color: #f5b301;
     margin-top: 10px; font-style: italic;
   }
 
-  /* NOVO: selo do autor */
   .selo-autor {
     display: inline-block; font-size: 12px; margin-left: 4px;
     vertical-align: middle;
   }
 
-  /* NOVO: último comentário no card */
   .ultimo-comentario {
     background: rgba(77,171,247,0.05); border-left: 2px solid #4dabf7;
     padding: 8px 12px; border-radius: 8px; font-size: 13px; color: #a0c4e8;
@@ -359,7 +353,6 @@
   .ultimo-comentario strong { color: #4dabf7; font-weight: 600; }
   .ultimo-comentario em { color: #6a6a80; font-style: italic; }
 
-  /* NOVO: ranking mensal */
   .ranking-mensal {
     background: linear-gradient(135deg, rgba(245,179,1,0.08), rgba(233,69,96,0.05));
     border: 1px solid rgba(245,179,1,0.25); border-radius: 16px;
@@ -380,7 +373,6 @@
   .ranking-mensal-item .nome { flex: 1; color: #fff; font-weight: 600; font-size: 14px;}
   .ranking-mensal-item .qtd { color: #f5b301; font-weight: 700; font-size: 13px; }
 
-  /* NOVO: gráficos estatísticas */
   .stat-grafico {
     background: rgba(0,0,0,0.2); border-radius: 12px; padding: 20px; margin-bottom: 15px;
   }
@@ -404,7 +396,6 @@
   .barra-fill.laranja { background: linear-gradient(90deg, #ffb74d, #f57c00); }
   .barra-vazia { font-size: 12px; color: #6a6a80; text-align: center; padding: 15px; font-style: italic;}
 
-  /* NOVO: destaque no perfil */
   .perfume-destaque {
     background: linear-gradient(135deg, rgba(245,179,1,0.1), rgba(233,69,96,0.05));
     border: 2px solid #f5b301; border-radius: 16px; padding: 20px;
@@ -416,30 +407,32 @@
     padding: 3px 10px; border-radius: 50px; letter-spacing: 0.5px;
   }
 
-  /* NOVO: card "Sobre mim" no perfil */
+  /* NOVO: card "Sobre mim" mais compacto e horizontal */
   .sobre-mim-card {
     background: linear-gradient(135deg, rgba(77,171,247,0.06), rgba(233,69,96,0.03));
     border: 1px solid rgba(77,171,247,0.2); border-radius: 16px;
-    padding: 20px; margin-bottom: 20px;
+    padding: 16px 20px; margin-bottom: 20px;
   }
-  .sobre-mim-card h4 {
-    font-size: 15px; color: #4dabf7; margin-bottom: 15px;
-    display: flex; align-items: center; gap: 8px;
+  .sobre-mim-linha {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding: 8px 0;
   }
-  .sobre-mim-secao { margin-bottom: 15px; }
-  .sobre-mim-secao:last-child { margin-bottom: 0; }
-  .sobre-mim-label {
-    font-size: 11px; color: #8b8b9e; text-transform: uppercase;
-    letter-spacing: 0.5px; font-weight: 600; margin-bottom: 8px;
-    display: flex; align-items: center; gap: 6px;
+  .sobre-mim-linha:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255,0.04);
   }
-  .sobre-mim-social {
-    display: flex; flex-wrap: wrap; gap: 8px;
+  .sobre-mim-linha .icone-linha {
+    font-size: 16px; flex-shrink: 0;
+  }
+  .sobre-mim-local {
+    font-size: 14px; color: #e8e8e8; font-weight: 500;
+  }
+  .sobre-mim-taglist {
+    display: flex; flex-wrap: wrap; gap: 6px; flex: 1;
   }
   .social-btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 8px 14px; border-radius: 10px; text-decoration: none;
-    font-size: 13px; font-weight: 600; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 6px 12px; border-radius: 8px; text-decoration: none;
+    font-size: 12px; font-weight: 600; transition: all 0.2s;
     border: 1px solid;
   }
   .social-btn.instagram { background: rgba(225,48,108,0.1); color: #e1306c; border-color: rgba(225,48,108,0.3); }
@@ -452,25 +445,17 @@
   .social-btn.telegram:hover { background: #0088cc; color: #fff; }
   .social-btn.loja { background: rgba(156,39,176,0.1); color: #ce93d8; border-color: rgba(156,39,176,0.3); }
   .social-btn.loja:hover { background: #9c27b0; color: #fff; }
-  .sobre-mim-local {
-    font-size: 14px; color: #e8e8e8;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .sobre-mim-insumos {
-    display: flex; flex-wrap: wrap; gap: 8px;
-  }
   .insumo-tag {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 6px 12px; border-radius: 50px;
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 5px 10px; border-radius: 50px;
     background: rgba(76,175,80,0.1); color: #81c784;
     border: 1px solid rgba(76,175,80,0.3);
-    font-size: 12px; font-weight: 500; text-decoration: none;
+    font-size: 11px; font-weight: 500; text-decoration: none;
     transition: all 0.2s;
   }
   a.insumo-tag:hover { background: #4caf50; color: #fff; }
   .insumo-tag.sem-link { cursor: default; }
 
-  /* NOVO: formulário editar perfil */
   .perfil-form-secao {
     background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.05);
     border-radius: 12px; padding: 18px; margin-bottom: 18px;
@@ -1188,7 +1173,6 @@
     <button class="btn-fechar-modal" onclick="fecharModalEditarPerfil()">✖</button>
     <h2 style="font-size: 1.5rem; margin-bottom: 20px;">✏️ Editar Perfil</h2>
     <form id="formEditarPerfil">
-      <!-- Localização -->
       <div class="perfil-form-secao">
         <h4>📍 Localização</h4>
         <div class="perfil-form-grid">
@@ -1205,7 +1189,6 @@
         </div>
       </div>
 
-      <!-- Redes sociais -->
       <div class="perfil-form-secao">
         <h4>🌐 Redes Sociais</h4>
         <div class="perfil-form-grid">
@@ -1228,7 +1211,6 @@
         </div>
       </div>
 
-      <!-- Loja -->
       <div class="perfil-form-secao">
         <h4>🛒 Minha Loja / Site</h4>
         <div class="perfil-form-grid">
@@ -1243,7 +1225,6 @@
         </div>
       </div>
 
-      <!-- Insumos -->
       <div class="perfil-form-secao">
         <h4>🧪 Insumos que uso</h4>
         <p style="font-size: 12px; color: #8b8b9e; margin-bottom: 12px; line-height: 1.5;">
@@ -1388,7 +1369,6 @@ function statusAdminDoAutor(email) {
   return null;
 }
 
-// NOVO: perfil tem "completude" quando ≥3 campos preenchidos
 function perfilEstaCompleto(membro) {
   if (!membro) return false;
   let count = 0;
@@ -2069,10 +2049,6 @@ onAuthStateChanged(auth, async (user) => {
           mostrarTelaBloqueado(user);
           notificar("🚫 Acesso banido", "Seu acesso foi banido pelo admin.");
         }
-      }
-      // Atualiza modal de perfil aberto, se for o meu
-      if (!document.getElementById("modalPerfil").classList.contains("hidden")) {
-        // não força reabrir; deixa o próximo abrirPerfil puxar dados frescos
       }
     });
   } catch (err) {
@@ -3242,7 +3218,6 @@ window.abrirModalBase = (id) => {
 
 window.fecharModalBase = () => document.getElementById("modalBase").classList.add("hidden");
 
-// NOVO: helpers de URL de redes sociais
 function gerarInstagramUrl(usuario) {
   if (!usuario) return null;
   let limpo = String(usuario).trim().replace(/^@/, "");
@@ -3262,8 +3237,8 @@ function gerarTelegramUrl(valor) {
   if (!valor) return null;
   const v = String(valor).trim();
   if (/^https?:\/\//i.test(v)) return v;
-  const semArroba = v.replace(/^@/, "").replace(/\D/g, "");
   if (/^\+?\d{8,15}$/.test(v.replace(/[^\d+]/g, ''))) {
+    const semArroba = v.replace(/^@/, "").replace(/\D/g, "");
     return "https://t.me/+" + semArroba;
   }
   const username = v.replace(/^@/, "").replace(/[^a-zA-Z0-9_]/g, "");
@@ -3367,7 +3342,7 @@ document.getElementById("formEditarPerfil").addEventListener("submit", async (e)
   }
 });
 
-// NOVO: gerar HTML do card "Sobre mim"
+// NOVO: card "Sobre mim" compacto e horizontal
 function renderSobreMim(membro) {
   if (!membro) return "";
   const temLocal = membro.cidade || membro.estado;
@@ -3382,80 +3357,70 @@ function renderSobreMim(membro) {
     if (membro.cidade) partes.push(escapeHtml(membro.cidade));
     if (membro.estado) partes.push(escapeHtml(membro.estado));
     localHTML = `
-      <div class="sobre-mim-secao">
-        <div class="sobre-mim-label">📍 Localização</div>
-        <div class="sobre-mim-local">${partes.join(" - ")}</div>
+      <div class="sobre-mim-linha">
+        <span class="icone-linha">📍</span>
+        <span class="sobre-mim-local">${partes.join(" - ")}</span>
       </div>
     `;
   }
 
   let redesHTML = "";
-  if (temRede) {
-    const botoes = [];
-    if (membro.instagram) {
-      const url = gerarInstagramUrl(membro.instagram);
-      if (url) botoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn instagram">📷 Instagram</a>`);
+  const redesBotoes = [];
+  if (membro.instagram) {
+    const url = gerarInstagramUrl(membro.instagram);
+    if (url) redesBotoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn instagram">📷 Instagram</a>`);
+  }
+  if (membro.facebook) {
+    const url = gerarFacebookUrl(membro.facebook);
+    if (url) redesBotoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn facebook">📘 Facebook</a>`);
+  }
+  if (membro.whatsapp) {
+    const url = gerarWhatsappUrl(membro.whatsapp);
+    if (url) redesBotoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp">💬 WhatsApp</a>`);
+  }
+  if (membro.telegram) {
+    const url = gerarTelegramUrl(membro.telegram);
+    if (url) redesBotoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn telegram">✈️ Telegram</a>`);
+  }
+  if (redesBotoes.length > 0 || temLoja) {
+    if (temLoja) {
+      const nomeExibido = membro.lojaNome || "Minha loja";
+      const url = membro.lojaUrl ? normalizarUrl(membro.lojaUrl) : null;
+      redesBotoes.push(
+        url
+          ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn loja">🛍️ ${escapeHtml(nomeExibido)}</a>`
+          : `<span class="social-btn loja" style="cursor: default;">🛍️ ${escapeHtml(nomeExibido)}</span>`
+      );
     }
-    if (membro.facebook) {
-      const url = gerarFacebookUrl(membro.facebook);
-      if (url) botoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn facebook">📘 Facebook</a>`);
-    }
-    if (membro.whatsapp) {
-      const url = gerarWhatsappUrl(membro.whatsapp);
-      if (url) botoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp">💬 WhatsApp</a>`);
-    }
-    if (membro.telegram) {
-      const url = gerarTelegramUrl(membro.telegram);
-      if (url) botoes.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn telegram">✈️ Telegram</a>`);
-    }
-    if (botoes.length > 0) {
+    if (redesBotoes.length > 0) {
       redesHTML = `
-        <div class="sobre-mim-secao">
-          <div class="sobre-mim-label">🌐 Redes sociais</div>
-          <div class="sobre-mim-social">${botoes.join("")}</div>
+        <div class="sobre-mim-linha">
+          <div class="sobre-mim-taglist">${redesBotoes.join("")}</div>
         </div>
       `;
     }
   }
 
-  let lojaHTML = "";
-  if (temLoja) {
-    const nomeExibido = membro.lojaNome || "Minha loja";
-    const url = membro.lojaUrl ? normalizarUrl(membro.lojaUrl) : null;
-    lojaHTML = `
-      <div class="sobre-mim-secao">
-        <div class="sobre-mim-label">🛒 Minha loja</div>
-        ${url
-          ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="social-btn loja">🛍️ ${escapeHtml(nomeExibido)}</a>`
-          : `<span class="social-btn loja" style="cursor: default;">🛍️ ${escapeHtml(nomeExibido)}</span>`
-        }
-      </div>
-    `;
-  }
-
   let insumosHTML = "";
   if (temInsumos) {
+    const pills = membro.insumos.map(ins => {
+      const url = ins.link ? normalizarUrl(ins.link) : null;
+      return url
+        ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="insumo-tag">${escapeHtml(ins.nome)} 🔗</a>`
+        : `<span class="insumo-tag sem-link">${escapeHtml(ins.nome)}</span>`;
+    }).join("");
     insumosHTML = `
-      <div class="sobre-mim-secao">
-        <div class="sobre-mim-label">🧪 Insumos que uso</div>
-        <div class="sobre-mim-insumos">
-          ${membro.insumos.map(ins => {
-            const url = ins.link ? normalizarUrl(ins.link) : null;
-            return url
-              ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="insumo-tag">${escapeHtml(ins.nome)} 🔗</a>`
-              : `<span class="insumo-tag sem-link">${escapeHtml(ins.nome)}</span>`;
-          }).join("")}
-        </div>
+      <div class="sobre-mim-linha">
+        <span class="icone-linha">🧪</span>
+        <div class="sobre-mim-taglist">${pills}</div>
       </div>
     `;
   }
 
   return `
     <div class="sobre-mim-card">
-      <h4>👤 Sobre mim</h4>
       ${localHTML}
       ${redesHTML}
-      ${lojaHTML}
       ${insumosHTML}
     </div>
   `;
@@ -3518,40 +3483,8 @@ window.abrirPerfil = (email) => {
     </div>
   ` : "";
 
-  // NOVO: card Sobre mim
+  // Card Sobre mim (compacto)
   const sobreMimHTML = renderSobreMim(membroDoPerfil);
-
-  const porGenero = { Feminino: 0, Masculino: 0, Compartilhado: 0 };
-  perfumesDoAutor.forEach(p => { if (porGenero[p.genero] !== undefined) porGenero[p.genero]++; });
-  const maxGenero = Math.max(porGenero.Feminino, porGenero.Masculino, porGenero.Compartilhado, 1);
-  const graficoGeneroHTML = `
-    <div class="stat-grafico">
-      <h5>🧴 Perfumes por Gênero</h5>
-      ${renderBarraHorizontal("Feminino", porGenero.Feminino, maxGenero, "rosa")}
-      ${renderBarraHorizontal("Masculino", porGenero.Masculino, maxGenero, "")}
-      ${renderBarraHorizontal("Compartilhado", porGenero.Compartilhado, maxGenero, "verde")}
-    </div>
-  `;
-
-  const agora = new Date();
-  const ultimos6 = [];
-  for (let i = 5; i >= 0; i--) {
-    const d = new Date(agora.getFullYear(), agora.getMonth() - i, 1);
-    ultimos6.push({ ano: d.getFullYear(), mes: d.getMonth(), label: d.toLocaleString('pt-BR', { month: 'short' }), qtd: 0 });
-  }
-  perfumesDoAutor.forEach(p => {
-    const ts = p.criadoEm?.toDate?.();
-    if (!ts) return;
-    const idx = ultimos6.findIndex(m => m.ano === ts.getFullYear() && m.mes === ts.getMonth());
-    if (idx >= 0) ultimos6[idx].qtd++;
-  });
-  const maxMes = Math.max(...ultimos6.map(m => m.qtd), 1);
-  const graficoMesesHTML = `
-    <div class="stat-grafico">
-      <h5>📈 Contribuições (últimos 6 meses)</h5>
-      ${ultimos6.map(m => renderBarraHorizontal(m.label, m.qtd, maxMes, "")).join("")}
-    </div>
-  `;
 
   let recomendacoesHTML = "";
   if (usuarioAtual && usuarioAtual.email !== email) {
@@ -3588,11 +3521,9 @@ window.abrirPerfil = (email) => {
                         : adminStatus === 'admin' ? '<span class="tag-admin">🛡️ Admin</span>'
                         : '';
 
-  // NOVO: selo "Perfil completo"
   const completo = perfilEstaCompleto(membroDoPerfil);
   const seloCompleto = completo ? '<span class="selo-perfil-completo">✅ Perfil completo</span>' : '';
 
-  // NOVO: botão editar perfil (só no próprio perfil)
   const souEuMesmo = usuarioAtual && usuarioAtual.email === email;
   const botaoEditar = souEuMesmo ? `<button class="btn-editar-perfil" onclick="fecharModalPerfil(); abrirEditarPerfil()">✏️ Editar perfil</button>` : "";
 
@@ -3621,8 +3552,6 @@ window.abrirPerfil = (email) => {
     </div>
     ${sobreMimHTML}
     ${destaqueHTML}
-    ${graficoGeneroHTML}
-    ${graficoMesesHTML}
     <h4 style="margin-bottom: 15px; color: #fff;">🧪 Perfumes de ${escapeHtml(autorNome)}</h4>
     <div style="max-height: 400px; overflow-y: auto; padding-right: 5px;">
       ${listaHTML || '<div style="font-size:13px; color:#8b8b9e; text-align:center; padding: 20px;">Nenhum outro perfume.</div>'}
