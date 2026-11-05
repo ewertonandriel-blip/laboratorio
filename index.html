@@ -76,7 +76,6 @@
   .btn-google:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
   .btn-google img { width: 20px; height: 20px; }
 
-  /* NOVO: dica para usuários iOS */
   .dica-ios {
     margin-top: 20px; padding: 12px 16px;
     background: rgba(77,171,247,0.08); border: 1px solid rgba(77,171,247,0.25);
@@ -200,6 +199,8 @@
   .notif-item small { display: block; color: #8b8b9e; margin-top: 4px; }
   .notif-item.social { background: rgba(77,171,247,0.08); border-left-color: #4dabf7; }
   .notif-item.social:hover { background: rgba(77,171,247,0.15); }
+  .notif-item.social.prioridade-alta { border-left-color: #e94560; background: rgba(233,69,96,0.1); }
+  .notif-item.social.prioridade-alta:hover { background: rgba(233,69,96,0.2); }
   .notif-tabs { display: flex; gap: 4px; margin-bottom: 12px; }
   .notif-tab { flex: 1; padding: 8px; background: transparent; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #8b8b9e; cursor: pointer; font-size: 12px; font-weight: 600; font-family: inherit; transition: all 0.2s;}
   .notif-tab.ativo { background: rgba(77,171,247,0.1); color: #4dabf7; border-color: rgba(77,171,247,0.3); }
@@ -263,6 +264,158 @@
   .aviso-duplicata { background: rgba(77,171,247,0.08); border: 1px solid rgba(77,171,247,0.25); border-radius: 10px; padding: 10px 14px; font-size: 13px; color: #4dabf7; margin-top: 8px; display: none; align-items: center; gap: 8px;}
   .aviso-duplicata.visivel { display: flex; }
 
+  /* NOVO: chips de filtro rápido */
+  .chips-filtro {
+    display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;
+  }
+  .chip {
+    padding: 8px 16px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1);
+    background: transparent; color: #a0a0b0; cursor: pointer;
+    font-family: inherit; font-size: 13px; font-weight: 600;
+    transition: all 0.2s; white-space: nowrap;
+  }
+  .chip:hover { background: rgba(255,255,255,0.05); color: #fff; }
+  .chip.ativo { background: rgba(77,171,247,0.15); color: #4dabf7; border-color: #4dabf7; }
+
+  /* NOVO: onboarding */
+  .onboarding-card {
+    background: linear-gradient(135deg, rgba(77,171,247,0.1), rgba(233,69,96,0.05));
+    border: 1px solid rgba(77,171,247,0.3); border-radius: 20px;
+    padding: 30px; margin-bottom: 25px;
+  }
+  .onboarding-card h3 {
+    color: #fff; font-size: 1.3rem; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .onboarding-card p { color: #a0a0b0; font-size: 14px; margin-bottom: 20px; line-height: 1.6;}
+  .onboarding-passos { display: grid; gap: 12px; margin-bottom: 20px;}
+  .onboarding-passo {
+    display: flex; gap: 14px; align-items: center;
+    background: rgba(0,0,0,0.2); padding: 14px 18px; border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .onboarding-passo .num {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: linear-gradient(135deg, #4dabf7, #3b8dd4);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .onboarding-passo .info { flex: 1; }
+  .onboarding-passo .info strong { color: #fff; display: block; font-size: 14px; margin-bottom: 2px;}
+  .onboarding-passo .info small { color: #8b8b9e; font-size: 12px;}
+  .onboarding-passo button {
+    background: #4dabf7; color: #fff; border: none; padding: 8px 16px;
+    border-radius: 10px; cursor: pointer; font-family: inherit; font-size: 13px;
+    font-weight: 600; transition: all 0.2s; white-space: nowrap;
+  }
+  .onboarding-passo button:hover { background: #3b8dd4; }
+  .onboarding-dispensar {
+    background: transparent; border: 1px solid rgba(255,255,255,0.2);
+    color: #a0a0b0; padding: 8px 16px; border-radius: 10px;
+    cursor: pointer; font-family: inherit; font-size: 13px;
+  }
+  .onboarding-dispensar:hover { background: rgba(255,255,255,0.05); color: #fff; }
+
+  /* NOVO: chips de notas olfativas */
+  .chips-notas { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .chip-nota {
+    padding: 6px 12px; border-radius: 50px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    color: #a0a0b0; cursor: pointer; font-size: 12px; font-family: inherit;
+    font-weight: 500; transition: all 0.2s;
+  }
+  .chip-nota:hover { border-color: rgba(77,171,247,0.5); color: #fff; }
+  .chip-nota.ativa { background: rgba(77,171,247,0.15); color: #4dabf7; border-color: #4dabf7; }
+  .notas-input-wrapper {
+    display: flex; gap: 8px; margin-top: 8px;
+  }
+  .notas-input-wrapper input { flex: 1; }
+  .notas-input-wrapper button {
+    background: rgba(77,171,247,0.15); color: #4dabf7; border: 1px solid rgba(77,171,247,0.3);
+    border-radius: 12px; padding: 0 16px; cursor: pointer; font-weight: 700; font-family: inherit;
+  }
+  .notas-input-wrapper button:hover { background: #4dabf7; color: #fff; }
+
+  /* NOVO: nota pessoal em favoritos */
+  .nota-pessoal {
+    background: rgba(245,179,1,0.08); border-left: 3px solid #f5b301;
+    padding: 8px 12px; border-radius: 8px; font-size: 13px; color: #f5b301;
+    margin-top: 10px; font-style: italic;
+  }
+
+  /* NOVO: selo do autor */
+  .selo-autor {
+    display: inline-block; font-size: 12px; margin-left: 4px;
+    vertical-align: middle;
+  }
+
+  /* NOVO: último comentário no card */
+  .ultimo-comentario {
+    background: rgba(77,171,247,0.05); border-left: 2px solid #4dabf7;
+    padding: 8px 12px; border-radius: 8px; font-size: 13px; color: #a0c4e8;
+    margin-top: 12px; line-height: 1.5;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .ultimo-comentario strong { color: #4dabf7; font-weight: 600; }
+  .ultimo-comentario em { color: #6a6a80; font-style: italic; }
+
+  /* NOVO: ranking mensal */
+  .ranking-mensal {
+    background: linear-gradient(135deg, rgba(245,179,1,0.08), rgba(233,69,96,0.05));
+    border: 1px solid rgba(245,179,1,0.25); border-radius: 16px;
+    padding: 20px; margin-bottom: 20px;
+  }
+  .ranking-mensal h3 {
+    color: #f5b301; font-size: 16px; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .ranking-mensal-lista { display: flex; flex-direction: column; gap: 6px;}
+  .ranking-mensal-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px; background: rgba(0,0,0,0.2);
+    border-radius: 10px; cursor: pointer; transition: all 0.2s;
+  }
+  .ranking-mensal-item:hover { background: rgba(245,179,1,0.1); transform: translateX(4px);}
+  .ranking-mensal-item .pos { font-size: 18px; width: 30px; text-align: center; }
+  .ranking-mensal-item .nome { flex: 1; color: #fff; font-weight: 600; font-size: 14px;}
+  .ranking-mensal-item .qtd { color: #f5b301; font-weight: 700; font-size: 13px; }
+
+  /* NOVO: gráficos estatísticas */
+  .stat-grafico {
+    background: rgba(0,0,0,0.2); border-radius: 12px; padding: 20px; margin-bottom: 15px;
+  }
+  .stat-grafico h5 { font-size: 13px; color: #a0a0b0; margin-bottom: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;}
+  .barra-linha {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+  }
+  .barra-label { font-size: 12px; color: #e8e8e8; min-width: 100px; }
+  .barra-track {
+    flex: 1; height: 20px; background: rgba(255,255,255,0.05);
+    border-radius: 10px; overflow: hidden; position: relative;
+  }
+  .barra-fill {
+    height: 100%; border-radius: 10px; transition: width 0.4s ease;
+    background: linear-gradient(90deg, #4dabf7, #3b8dd4);
+    display: flex; align-items: center; justify-content: flex-end;
+    padding-right: 8px; font-size: 11px; color: #fff; font-weight: 600;
+  }
+  .barra-fill.rosa { background: linear-gradient(90deg, #e94560, #c73650); }
+  .barra-fill.verde { background: linear-gradient(90deg, #4caf50, #388e3c); }
+  .barra-fill.laranja { background: linear-gradient(90deg, #ffb74d, #f57c00); }
+  .barra-vazia { font-size: 12px; color: #6a6a80; text-align: center; padding: 15px; font-style: italic;}
+
+  /* NOVO: destaque no perfil */
+  .perfume-destaque {
+    background: linear-gradient(135deg, rgba(245,179,1,0.1), rgba(233,69,96,0.05));
+    border: 2px solid #f5b301; border-radius: 16px; padding: 20px;
+    margin-bottom: 20px; position: relative;
+  }
+  .perfume-destaque::before {
+    content: '📌 PERFUME DESTAQUE'; position: absolute; top: -10px; left: 20px;
+    background: #f5b301; color: #151724; font-size: 10px; font-weight: 700;
+    padding: 3px 10px; border-radius: 50px; letter-spacing: 0.5px;
+  }
+
   .perfume-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden;}
   .perfume-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #e94560; transition: all 0.3s;}
   .perfume-card.pronto::before { background: #4caf50; }
@@ -285,6 +438,7 @@
   .tag.tempo { background: rgba(139,139,158,0.1); color: #8b8b9e; border: 1px solid rgba(139,139,158,0.2); }
   .tag.experiencia { background: rgba(233,69,96,0.12); color: #e94560; border: 1px solid rgba(233,69,96,0.3); font-weight: 600;}
   .tag.banido { background: rgba(150,0,0,0.2); color: #ff6b6b; border: 1px solid rgba(244,67,54,0.5); font-weight: 600;}
+  .tag.nota-olf { background: rgba(77,171,247,0.08); color: #6a9fd4; font-size: 11px; padding: 4px 10px;}
 
   .estrelas-card { color: #f5b301; letter-spacing: 1px; font-size: 14px; }
   .estrelas-card .vazia { color: rgba(255,255,255,0.15); }
@@ -394,6 +548,9 @@
   .btn-compartilhar:hover { background: #25D366; color: #fff; }
   .btn-duplicar { background: rgba(156,39,176,0.1); border: 1px solid rgba(156,39,176,0.3); color: #ce93d8; padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 13px; font-family: inherit; font-weight: 600; transition: all 0.2s;}
   .btn-duplicar:hover { background: #9c27b0; color: #fff; }
+  .btn-fixar { background: rgba(245,179,1,0.1); border: 1px solid rgba(245,179,1,0.3); color: #f5b301; padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 13px; font-family: inherit; font-weight: 600; transition: all 0.2s;}
+  .btn-fixar:hover { background: #f5b301; color: #151724; }
+  .btn-fixar.ativo { background: #f5b301; color: #151724; }
   
   .modal-botoes { display: flex; gap: 12px; margin-top: 25px; grid-column: 1 / -1; }
   .btn-cancelar { flex: 1; padding: 14px; border-radius: 12px; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #ccc; cursor: pointer; font-weight: 600; font-family: inherit; transition: all 0.3s;}
@@ -546,6 +703,8 @@
     .comentario-input-linha { flex-direction: column; }
     .comentario-input-linha .btn-comentar { width: 100%; }
     .usuario-item { flex-direction: column; align-items: stretch; }
+    .onboarding-passo { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .onboarding-passo button { width: 100%; }
   }
 </style>
 </head>
@@ -571,7 +730,6 @@
       <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
       Entrar com Google
     </button>
-    <!-- NOVO: dica exclusiva para iOS/Safari -->
     <div id="dicaIos" class="dica-ios">
       💡 <strong>Dica para iPhone/iPad:</strong> para manter o login salvo, abra no <strong>Safari</strong> e toque em <strong>Compartilhar → Adicionar à Tela de Início</strong>. Depois acesse pelo ícone do app.
     </div>
@@ -652,9 +810,18 @@
       <section id="aba-lancamentos" class="aba">
         <div class="card">
           <h2>🆕 Últimos Lançamentos</h2>
+          <!-- NOVO: ranking mensal -->
+          <div id="rankingMensalContainer"></div>
           <div id="topSemanaContainer"></div>
+          <!-- NOVO: chips de filtro rápido -->
+          <div class="chips-filtro">
+            <button class="chip ativo" data-chip="todos" onclick="aplicarChipFiltro('todos')">Todos</button>
+            <button class="chip" data-chip="prontos" onclick="aplicarChipFiltro('prontos')">🎯 Prontos p/ testar</button>
+            <button class="chip" data-chip="macerando" onclick="aplicarChipFiltro('macerando')">⏳ Em maceração</button>
+            <button class="chip" data-chip="aprovados" onclick="aplicarChipFiltro('aprovados')">🏆 Aprovados</button>
+          </div>
           <div class="filtros">
-            <input id="filtroBusca" placeholder="🔍 Buscar por nome, marca, feedback..." oninput="renderLancamentos()" />
+            <input id="filtroBusca" placeholder="🔍 Nome, marca, nota olfativa, feedback..." oninput="renderLancamentos()" />
             <select id="filtroGenero" onchange="renderLancamentos()">
               <option value="">Todos os Gêneros</option>
               <option value="Feminino">Feminino</option>
@@ -668,10 +835,7 @@
               <option value="melhores-autor">Melhores Notas do Autor</option>
               <option value="curtidos">Mais Curtidos</option>
               <option value="salvos">Mais Salvos (Favoritos)</option>
-              <option value="aprovados">Aprovados</option>
-              <option value="reprovados">Reprovados</option>
-              <option value="em_andamento">Em Andamento</option>
-              <option value="meta-atingida">Meta Atingida (Pode testar)</option>
+              <option value="comentados">Mais Comentados</option>
             </select>
           </div>
           <p class="contador" id="contadorLanc">0 perfumes</p>
@@ -697,6 +861,8 @@
       <section id="aba-minhas" class="aba hidden">
         <div class="card">
           <h2>📚 Meus Perfumes</h2>
+          <!-- NOVO: onboarding primeiro acesso -->
+          <div id="onboardingContainer"></div>
           <div class="filtros">
             <input id="filtroBuscaMinhas" placeholder="🔍 Buscar..." oninput="renderMinhas()" />
             <select id="filtroGeneroMinhas" onchange="renderMinhas()">
@@ -782,6 +948,17 @@
                 <input type="text" id="concentracao" required placeholder="Ex: 20" oninput="this.value = this.value.replace(/[^0-9.,]/g,'')" />
                 <span>%</span>
               </div>
+            </div>
+
+            <!-- NOVO: notas olfativas -->
+            <div class="form-grupo full">
+              <label>Notas Olfativas (opcional)</label>
+              <div class="chips-notas" id="chipsNotasSugeridas"></div>
+              <div class="notas-input-wrapper">
+                <input id="inputNotaCustom" placeholder="Adicionar nota personalizada..." maxlength="30" onkeydown="if(event.key==='Enter'){event.preventDefault();adicionarNotaCustom();}" />
+                <button type="button" onclick="adicionarNotaCustom()">+ Add</button>
+              </div>
+              <div class="chips-notas" id="chipsNotasSelecionadas" style="margin-top: 10px;"></div>
             </div>
 
             <div class="form-grupo full">
@@ -885,6 +1062,8 @@
             <div class="admin-card"><h3>Perfumes Prontos</h3><p id="adminTotalProntos">0</p></div>
             <div class="admin-card"><h3>Perfumes em Maceração</h3><p id="adminTotalMacerando">0</p></div>
           </div>
+          <!-- NOVO: dashboard admin -->
+          <div id="adminGraficos"></div>
           <h3 style="margin-bottom: 15px; color: #fff;">⏳ Solicitações Pendentes</h3>
           <div id="adminSolicitacoes" style="margin-bottom: 30px;">
             <div style="font-size: 13px; color: #8b8b9e; padding: 10px;">Nenhuma solicitação pendente.</div>
@@ -1001,38 +1180,52 @@ let emailPerfilAnterior = null;
 let idPerfumeExcluindo = null;
 let nomePerfumeExcluindo = "";
 let notifTabAtual = 'metas';
+let chipFiltroAtivo = 'todos'; // NOVO
+let notasSelecionadas = []; // NOVO
 
 let paginas = { lanc: 1, fav: 1, minhas: 1 };
 let filtradosLanc = [], filtradosFav = [], filtradosMinhas = [];
 
 const RASCUNHO_KEY = 'contratipos_rascunho_form';
 const LIMITE_NOTIFS_LIDAS = 200;
+const ONBOARDING_DISMISS_KEY = 'contratipos_onboarding_dismiss'; // NOVO
+
+// NOVO: notas olfativas sugeridas (chips iniciais)
+const NOTAS_SUGERIDAS = [
+  "Baunilha", "Oud", "Âmbar", "Cítrico", "Amadeirado", "Floral",
+  "Frutado", "Especiado", "Aromático", "Couro", "Almiscar",
+  "Patchouli", "Rosa", "Jasmim", "Bergamota", "Sândalo",
+  "Tonka", "Chocolate", "Café", "Marinho", "Fougère", "Gourmand"
+];
 
 function isSuperAdmin() { return usuarioAtual && usuarioAtual.email === SUPER_ADMIN_EMAIL; }
 function souAdmin() { return membroAtual && membroAtual.isAdmin === true; }
 function ehSuperAdminEmail(email) { return email === SUPER_ADMIN_EMAIL; }
 
-// NOVO: descobre o status do autor de um perfume (para sinalizar banido)
 function statusAutorDoPerfume(perfume) {
   if (!perfume || !perfume.autorEmail) return null;
   const membro = todosMembros.find(m => m.email === perfume.autorEmail);
   return membro ? membro.status : null;
 }
 
-// NOVO: descobre se um email pertence a um admin comum (não super)
-// Usado para impedir que admins comuns gerenciem uns aos outros
 function ehAdminComum(email) {
   if (!email || ehSuperAdminEmail(email)) return false;
   const m = todosMembros.find(x => x.email === email);
   return m && m.isAdmin === true;
 }
 
-// NOVO: detecta iOS (iPhone/iPad/iPod) e Safari (inclui iOS Safari)
-// Usado para forçar redirect no login e melhorar persistência de sessão
+// NOVO: descobre o status admin do autor (para selo)
+function statusAdminDoAutor(email) {
+  if (!email) return null;
+  if (ehSuperAdminEmail(email)) return 'super';
+  const m = todosMembros.find(x => x.email === email);
+  if (m && m.isAdmin) return 'admin';
+  return null;
+}
+
 function detectarIOSouSafari() {
   const ua = navigator.userAgent || '';
   const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
-  // Safari desktop: tem "Safari" e não tem Chrome/Android/CriOS/FxiOS/EdgiOS
   const isSafari = /^((?!chrome|android|crios|fxios|edgios).)*safari/i.test(ua);
   return isIOS || isSafari;
 }
@@ -1114,6 +1307,49 @@ function atualizarContador(inputId, max) {
   if (len >= max) counter.classList.add('limite');
   else if (len >= max * 0.9) counter.classList.add('perto');
 }
+
+// NOVO: renderizar chips de notas
+function renderChipsNotas() {
+  const sugeridas = document.getElementById("chipsNotasSugeridas");
+  const selecionadas = document.getElementById("chipsNotasSelecionadas");
+  if (!sugeridas || !selecionadas) return;
+  sugeridas.innerHTML = NOTAS_SUGERIDAS.map(n => {
+    const ativa = notasSelecionadas.includes(n);
+    return `<button type="button" class="chip-nota ${ativa?'ativa':''}" onclick="toggleNota('${n.replace(/'/g,"\\'")}')">${n}</button>`;
+  }).join("");
+  selecionadas.innerHTML = notasSelecionadas.map(n =>
+    `<button type="button" class="chip-nota ativa" onclick="removerNota('${n.replace(/'/g,"\\'")}')">${n} ×</button>`
+  ).join("");
+}
+
+window.toggleNota = (nota) => {
+  if (notasSelecionadas.includes(nota)) {
+    notasSelecionadas = notasSelecionadas.filter(n => n !== nota);
+  } else {
+    notasSelecionadas.push(nota);
+  }
+  renderChipsNotas();
+  salvarRascunho();
+};
+
+window.removerNota = (nota) => {
+  notasSelecionadas = notasSelecionadas.filter(n => n !== nota);
+  renderChipsNotas();
+  salvarRascunho();
+};
+
+window.adicionarNotaCustom = () => {
+  const input = document.getElementById("inputNotaCustom");
+  if (!input) return;
+  const valor = input.value.trim();
+  if (!valor) return;
+  if (!notasSelecionadas.includes(valor)) {
+    notasSelecionadas.push(valor);
+    renderChipsNotas();
+    salvarRascunho();
+  }
+  input.value = "";
+};
 
 function renderBases() {
   const cont = document.getElementById("baseOpcoes");
@@ -1355,10 +1591,6 @@ window.verificarDuplicataForm = () => {
   }
 };
 
-// NOVO: login adaptado por navegador
-// - Chrome (Android/desktop), Firefox, Edge, etc → popup (funciona bem e mantém sessão)
-// - iOS (qualquer navegador, pois todos usam WebKit) e Safari desktop → redirect
-//   (evita o problema de popup fechando IndexedDB no Safari e melhora persistência)
 window.fazerLogin = async () => {
   const usarRedirect = detectarIOSouSafari();
   try {
@@ -1369,7 +1601,6 @@ window.fazerLogin = async () => {
     }
   } catch (err) {
     if (err.code === "auth/unauthorized-domain") { alert("Domínio não autorizado: " + location.hostname); return; }
-    // Se popup falhar (bloqueado/fechado), tenta redirect como fallback
     if (["auth/popup-blocked","auth/popup-closed-by-user"].includes(err.code)) {
       try { await signInWithRedirect(auth, provider); } catch (e2) { alert(e2.message); }
     } else alert(err.message);
@@ -1410,6 +1641,13 @@ window.mudarNotifTab = (tab) => {
   document.querySelectorAll('.notif-tab')[tab === 'metas' ? 0 : 1].classList.add('ativo');
   document.getElementById('notifListaMetas').classList.toggle('hidden', tab !== 'metas');
   document.getElementById('notifListaSociais').classList.toggle('hidden', tab !== 'sociais');
+};
+
+// NOVO: chip de filtro rápido
+window.aplicarChipFiltro = (chip) => {
+  chipFiltroAtivo = chip;
+  document.querySelectorAll('.chip').forEach(c => c.classList.toggle('ativo', c.dataset.chip === chip));
+  renderLancamentos();
 };
 
 window.toggleStatusForm = () => {
@@ -1471,6 +1709,7 @@ function salvarRascunho() {
     nomePerfume: document.getElementById("nomePerfume").value,
     marcaEssencia: document.getElementById("marcaEssencia").value,
     concentracao: document.getElementById("concentracao").value,
+    notasOlfativas: notasSelecionadas.slice(), // NOVO
     tipoOndeEncontrar: document.getElementById("tipoOndeEncontrar").value,
     linkSite: document.getElementById("linkSite").value,
     nomeVendedor: document.getElementById("nomeVendedor").value,
@@ -1527,6 +1766,8 @@ window.recuperarRascunho = () => {
     document.getElementById("nomePerfume").value = d.nomePerfume || "";
     document.getElementById("marcaEssencia").value = d.marcaEssencia || "";
     document.getElementById("concentracao").value = d.concentracao || "";
+    notasSelecionadas = Array.isArray(d.notasOlfativas) ? d.notasOlfativas.slice() : []; // NOVO
+    renderChipsNotas();
     document.getElementById("tipoOndeEncontrar").value = d.tipoOndeEncontrar || "";
     toggleOndeEncontrar();
     document.getElementById("linkSite").value = d.linkSite || "";
@@ -1763,10 +2004,10 @@ function escutarMembrosAdmin() {
       if (pendentes.length > 0) { badgeSol.textContent = pendentes.length; badgeSol.style.display = "inline-block"; }
       else badgeSol.style.display = "none";
     }
-    // Re-renderiza cards para atualizar selo "autor banido" nos perfumes
     renderLancamentos(true);
     renderMinhas(true);
     renderFavoritos(true);
+    renderRankingMensal(); // NOVO
     if (souAdmin() && !document.getElementById("aba-admin").classList.contains("hidden")) {
       renderAdminFromCache();
     }
@@ -1838,6 +2079,11 @@ async function salvarVendedorNoCatalogo(nome, whatsapp) {
   } catch(e) { console.warn("Erro salvar vendedor:", e); }
 }
 
+// NOVO: prioridade de notificações sociais
+function prioridadeNotifSocial(tipo) {
+  return { resposta: 4, comentario: 3, avaliacao: 2, curtida: 1, favorito: 1 }[tipo] || 0;
+}
+
 window.verificarNotificacoes = () => {
   if (!usuarioAtual) return;
   const metas = todosPerfumes.filter(p => {
@@ -1900,6 +2146,8 @@ window.verificarNotificacoes = () => {
       if (!lidas.includes(key)) sociais.push({ tipo: 'resposta', key, perfume: p, quem: c.autor, texto: `${c.autor} respondeu seu comentário em "${p.nomePerfume}": ${c.texto.slice(0,50)}...` });
     });
   });
+  // NOVO: ordenar por prioridade
+  sociais.sort((a, b) => prioridadeNotifSocial(b.tipo) - prioridadeNotifSocial(a.tipo));
   const total = metas.length + sociais.length;
   const badge = document.getElementById("notifBadge");
   if (total > 0) { badge.textContent = total > 99 ? "99+" : total; badge.classList.remove("hidden"); }
@@ -1909,12 +2157,15 @@ window.verificarNotificacoes = () => {
     socCont.innerHTML = '<div style="font-size: 13px; color: #8b8b9e; text-align: center; padding: 10px;">Nenhuma notificação social.</div>';
   } else {
     const icones = { curtida: '❤️', favorito: '⭐', avaliacao: '🌟', resposta: '↩', comentario: '💬' };
-    socCont.innerHTML = sociais.slice(0, 30).map(n => `
-      <div class="notif-item social" onclick="toggleNotifPanel(); abrirDetalhes('${n.perfume.id}')">
-        <strong>${icones[n.tipo] || '🔔'} ${escapeHtml(n.quem.split('@')[0])}</strong>
-        <small>${escapeHtml(n.texto)}</small>
-      </div>
-    `).join("");
+    socCont.innerHTML = sociais.slice(0, 30).map(n => {
+      const prioridadeAlta = n.tipo === 'resposta';
+      return `
+        <div class="notif-item social ${prioridadeAlta?'prioridade-alta':''}" onclick="toggleNotifPanel(); abrirDetalhes('${n.perfume.id}')">
+          <strong>${icones[n.tipo] || '🔔'} ${escapeHtml(n.quem.split('@')[0])}</strong>
+          <small>${escapeHtml(n.texto)}</small>
+        </div>
+      `;
+    }).join("");
   }
 };
 
@@ -1953,6 +2204,7 @@ function escutarLancamentos() {
     todosPerfumes = snap.docs.map(d => ({ id: d.id, ...d.data() }));
     renderLancamentos();
     renderTopSemana();
+    renderRankingMensal(); // NOVO
     renderMinhas();
     verificarNotificacoes();
     if (souAdmin()) migrarMembrosAntigos().catch(e => console.warn(e));
@@ -1970,6 +2222,41 @@ function timestampUltimaAtividade(p) {
   (p.diario || []).forEach(d => { const t = new Date(d.data); if (t > ultimo) ultimo = t; });
   return ultimo;
 }
+
+// NOVO: ranking mensal de contribuidores
+window.renderRankingMensal = () => {
+  const agora = new Date();
+  const inicioMes = new Date(agora.getFullYear(), agora.getMonth(), 1).getTime();
+  const contribuicoes = {};
+  todosPerfumes.forEach(p => {
+    const ts = p.criadoEm?.toDate?.()?.getTime?.() || 0;
+    if (ts < inicioMes) return;
+    if (!contribuicoes[p.autorEmail]) {
+      contribuicoes[p.autorEmail] = { email: p.autorEmail, nome: p.autorNome || "Anônimo", foto: p.autorFoto || "", qtd: 0 };
+    }
+    contribuicoes[p.autorEmail].qtd++;
+  });
+  const ranking = Object.values(contribuicoes).sort((a, b) => b.qtd - a.qtd).slice(0, 5);
+  const cont = document.getElementById("rankingMensalContainer");
+  if (!cont) return;
+  if (ranking.length === 0) { cont.innerHTML = ""; return; }
+  const medalhas = ["🥇", "🥈", "🥉", "4️⃣", "5️⃣"];
+  const mesNome = agora.toLocaleString('pt-BR', { month: 'long' });
+  cont.innerHTML = `
+    <div class="ranking-mensal">
+      <h3>🏅 Top Contribuidores de ${mesNome.charAt(0).toUpperCase() + mesNome.slice(1)}</h3>
+      <div class="ranking-mensal-lista">
+        ${ranking.map((r, i) => `
+          <div class="ranking-mensal-item" onclick="abrirPerfil('${escapeHtml(r.email)}')">
+            <div class="pos">${medalhas[i] || (i+1)}</div>
+            <div class="nome">${escapeHtml(r.nome)}</div>
+            <div class="qtd">${r.qtd} perfume${r.qtd>1?'s':''}</div>
+          </div>
+        `).join("")}
+      </div>
+    </div>
+  `;
+};
 
 window.renderTopSemana = () => {
   const agora = Date.now();
@@ -2045,22 +2332,23 @@ window.renderLancamentos = (manterPagina = false) => {
   const generoFiltro = document.getElementById("filtroGenero").value;
   const ordem = document.getElementById("filtroOrdem").value;
   let filtrados = todosPerfumes.filter(p => {
-    const matchBusca = !busca || (p.nomePerfume || "").toLowerCase().includes(busca) || (p.marcaEssencia || "").toLowerCase().includes(busca) || (p.feedback || "").toLowerCase().includes(busca);
+    // NOVO: busca inclui notasOlfativas
+    const buscaEmNotas = (p.notasOlfativas || []).join(" ").toLowerCase();
+    const matchBusca = !busca
+      || (p.nomePerfume || "").toLowerCase().includes(busca)
+      || (p.marcaEssencia || "").toLowerCase().includes(busca)
+      || (p.feedback || "").toLowerCase().includes(busca)
+      || buscaEmNotas.includes(busca);
     const matchGenero = !generoFiltro || p.genero === generoFiltro;
     return matchBusca && matchGenero;
   });
-  if (ordem === "meta-atingida") {
-    filtrados = filtrados.filter(p => {
-      if (p.statusContratipo !== "em_andamento") return false;
-      const d = calcularDiasRestantes(p.dataInicioMaceracao, p.diasMacerando);
-      return d !== null && d <= 0;
-    });
-  }
-  else if (ordem === "aprovados") filtrados = filtrados.filter(p => p.resultado === "aprovado");
-  else if (ordem === "reprovados") filtrados = filtrados.filter(p => p.resultado === "reprovado");
-  else if (ordem === "curtidos") filtrados.sort((a,b) => (b.curtidas?.length||0) - (a.curtidas?.length||0));
+  // NOVO: aplicar chip de filtro
+  if (chipFiltroAtivo === "prontos") filtrados = filtrados.filter(p => p.statusContratipo === "pronto");
+  else if (chipFiltroAtivo === "macerando") filtrados = filtrados.filter(p => p.statusContratipo === "em_andamento");
+  else if (chipFiltroAtivo === "aprovados") filtrados = filtrados.filter(p => p.resultado === "aprovado");
+  if (ordem === "curtidos") filtrados.sort((a,b) => (b.curtidas?.length||0) - (a.curtidas?.length||0));
   else if (ordem === "salvos") filtrados.sort((a,b) => (b.favoritos?.length||0) - (a.favoritos?.length||0));
-  else if (ordem === "em_andamento") filtrados = filtrados.filter(p => p.statusContratipo === "em_andamento");
+  else if (ordem === "comentados") filtrados.sort((a,b) => (b.comentarios?.length||0) - (a.comentarios?.length||0)); // NOVO
   else if (ordem === "atividade") filtrados.sort((a,b) => timestampUltimaAtividade(b) - timestampUltimaAtividade(a));
   else if (ordem === "melhores-autor") {
     filtrados = filtrados.filter(p => p.statusContratipo === "pronto");
@@ -2094,7 +2382,7 @@ window.renderMinhas = (manterPagina = false) => {
   const genero = document.getElementById("filtroGeneroMinhas")?.value || "";
   const ordem = document.getElementById("filtroOrdemMinhas")?.value || "recentes";
   let itens = todosPerfumes.filter(p => p.autorEmail === usuarioAtual.email);
-  if (busca) itens = itens.filter(p => (p.nomePerfume||"").toLowerCase().includes(busca) || (p.marcaEssencia||"").toLowerCase().includes(busca));
+  if (busca) itens = itens.filter(p => (p.nomePerfume||"").toLowerCase().includes(busca) || (p.marcaEssencia||"").toLowerCase().includes(busca) || (p.notasOlfativas||[]).join(" ").toLowerCase().includes(busca));
   if (genero) itens = itens.filter(p => p.genero === genero);
   if (ordem === "recentes") itens.sort((a,b) => (b.criadoEm?.seconds||0) - (a.criadoEm?.seconds||0));
   else if (ordem === "antigos") itens.sort((a,b) => (a.criadoEm?.seconds||0) - (b.criadoEm?.seconds||0));
@@ -2111,6 +2399,59 @@ window.renderMinhas = (manterPagina = false) => {
     ? paginaItens.map(p => cardPreviaHTML(p)).join("")
     : '<div class="empty">Você ainda não cadastrou nada. Vá em "Novo Perfume" ✨</div>';
   renderPaginacao(document.getElementById("paginacaoMinhasTopo"), document.getElementById("paginacaoMinhasBase"), itens.length, paginas.minhas, totalPaginas, "mudarPaginaMinhas(-1)", "mudarPaginaMinhas(1)");
+  // NOVO: renderizar onboarding
+  renderOnboarding();
+};
+
+// NOVO: onboarding para primeiro acesso
+function renderOnboarding() {
+  if (!usuarioAtual) return;
+  const cont = document.getElementById("onboardingContainer");
+  if (!cont) return;
+  const minhas = todosPerfumes.filter(p => p.autorEmail === usuarioAtual.email);
+  const dismissKey = ONBOARDING_DISMISS_KEY + '_' + usuarioAtual.email;
+  let dismissed = false;
+  try { dismissed = localStorage.getItem(dismissKey) === '1'; } catch(e){}
+  if (minhas.length > 0 || dismissed) { cont.innerHTML = ""; return; }
+  cont.innerHTML = `
+    <div class="onboarding-card">
+      <h3>👋 Bem-vindo(a) à comunidade!</h3>
+      <p>Você é novo por aqui. Aqui estão 3 passos para começar:</p>
+      <div class="onboarding-passos">
+        <div class="onboarding-passo">
+          <div class="num">1</div>
+          <div class="info">
+            <strong>Cadastre seu primeiro contratipo</strong>
+            <small>Registre sua experiência única com diário de maceração</small>
+          </div>
+          <button onclick="mudarAba('contribuir')">Cadastrar</button>
+        </div>
+        <div class="onboarding-passo">
+          <div class="num">2</div>
+          <div class="info">
+            <strong>Explore os lançamentos da comunidade</strong>
+            <small>Veja o que os outros membros estão criando</small>
+          </div>
+          <button onclick="mudarAba('lancamentos')">Explorar</button>
+        </div>
+        <div class="onboarding-passo">
+          <div class="num">3</div>
+          <div class="info">
+            <strong>Personalize seu perfil</strong>
+            <small>Fixe um perfume destaque e veja suas estatísticas</small>
+          </div>
+          <button onclick="abrirMeuPerfil()">Meu perfil</button>
+        </div>
+      </div>
+      <button class="onboarding-dispensar" onclick="dispensarOnboarding()">Dispensar</button>
+    </div>
+  `;
+}
+
+window.dispensarOnboarding = () => {
+  if (!usuarioAtual) return;
+  try { localStorage.setItem(ONBOARDING_DISMISS_KEY + '_' + usuarioAtual.email, '1'); } catch(e){}
+  renderOnboarding();
 };
 
 window.renderFavoritos = (manterPagina = false) => {
@@ -2123,7 +2464,7 @@ window.renderFavoritos = (manterPagina = false) => {
   const paginaItens = cortarPagina(favoritos, paginas.fav);
   document.getElementById("contadorFavoritos").textContent = `${favoritos.length} perfume${favoritos.length===1?"":"s"}`;
   document.getElementById("listaFavoritos").innerHTML = favoritos.length
-    ? paginaItens.map(p => cardPreviaHTML(p)).join("")
+    ? paginaItens.map(p => cardPreviaHTML(p, true)).join("")
     : '<div class="empty">Você ainda não favoritou nenhum perfume. Explore os lançamentos! ⭐</div>';
   renderPaginacao(document.getElementById("paginacaoFavTopo"), document.getElementById("paginacaoFavBase"), favoritos.length, paginas.fav, totalPaginas, "mudarPaginaFav(-1)", "mudarPaginaFav(1)");
 };
@@ -2151,7 +2492,7 @@ function ehNovo(p) {
   return (Date.now() - ts) < 24 * 60 * 60 * 1000;
 }
 
-function cardPreviaHTML(p) {
+function cardPreviaHTML(p, mostrarNotaPessoal = false) {
   const curtidas = p.curtidas || [];
   const isPronto = p.statusContratipo === "pronto";
   const media = isPronto ? (() => {
@@ -2177,9 +2518,35 @@ function cardPreviaHTML(p) {
   const exp = numeroExperiencia(p);
   const expHTML = exp ? `<span class="tag experiencia" title="${exp.num}ª experiência de ${escapeHtml(p.autorNome || 'autor')} com este perfume">🧪 Exp. #${exp.num}/${exp.total}</span>` : "";
   
-  // NOVO: selo de autor banido
   const statusAutor = statusAutorDoPerfume(p);
   const autorBanidoHTML = statusAutor === "bloqueado" ? `<span class="tag banido" title="O autor deste perfume foi banido">🔒 Autor Banido</span>` : "";
+
+  // NOVO: selo admin/super do autor
+  const adminStatus = statusAdminDoAutor(p.autorEmail);
+  const seloAutor = adminStatus === 'super' ? '<span class="selo-autor" title="Super Admin">👑</span>'
+                 : adminStatus === 'admin' ? '<span class="selo-autor" title="Admin">🛡️</span>'
+                 : '';
+
+  // NOVO: último comentário visível
+  const comentariosVisiveis = (p.comentarios || []).filter(c => !c.oculto);
+  const ultimoComent = comentariosVisiveis.length > 0 ? comentariosVisiveis[comentariosVisiveis.length - 1] : null;
+  const ultimoComentHTML = ultimoComent ? `
+    <div class="ultimo-comentario">
+      💬 <strong>${escapeHtml(ultimoComent.autor)}</strong>: "${escapeHtml(ultimoComent.texto.slice(0, 80))}${ultimoComent.texto.length > 80 ? '...' : ''}"
+    </div>
+  ` : "";
+
+  // NOVO: nota pessoal em favoritos
+  let notaPessoalHTML = "";
+  if (mostrarNotaPessoal && usuarioAtual) {
+    const nota = (p.favoritosNotas || {})[usuarioAtual.email];
+    if (nota) notaPessoalHTML = `<div class="nota-pessoal">📝 "${escapeHtml(nota)}"</div>`;
+  }
+
+  // NOVO: notas olfativas
+  const notasHTML = (p.notasOlfativas && p.notasOlfativas.length > 0)
+    ? p.notasOlfativas.slice(0, 5).map(n => `<span class="tag nota-olf">${escapeHtml(n)}</span>`).join("")
+    : "";
 
   return `
     <div class="perfume-card ${isPronto ? 'pronto' : ''}" onclick="abrirDetalhes('${p.id}')">
@@ -2192,17 +2559,21 @@ function cardPreviaHTML(p) {
         ${p.genero ? `<span class="tag genero">${escapeHtml(p.genero)}</span>` : ""}
         ${p.concentracao ? `<span class="tag">💧 ${escapeHtml(p.concentracao)}%</span>` : ""}
         ${statusTxt}
+        ${notasHTML}
       </div>
+      ${ultimoComentHTML}
+      ${notaPessoalHTML}
       <div class="previa-info">
         <div class="autor" onclick="event.stopPropagation(); abrirPerfil('${escapeHtml(p.autorEmail)}')">
           ${p.autorFoto ? `<img src="${p.autorFoto}" alt="" />` : `<div class="avatar-fallback">👤</div>`}
-          <span>${escapeHtml(p.autorNome || "Anônimo")}</span>
+          <span>${escapeHtml(p.autorNome || "Anônimo")}${seloAutor}</span>
         </div>
         <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
           <span class="tag tempo" style="margin:0;">🕒 ${tempoTxt}</span>
           ${isPronto ? `
             <span class="estrelas-card">${estrelasVisuais(media)} ${media > 0 ? media.toFixed(1) : "-"}</span> · 
             <span style="color: #e94560;">❤️ ${curtidas.length}</span>
+            ${comentariosVisiveis.length > 0 ? ` · <span style="color: #4dabf7;">💬 ${comentariosVisiveis.length}</span>` : ''}
           ` : '<span style="color: #ffb74d; font-size: 13px;">Avaliações bloqueadas</span>'}
         </div>
       </div>
@@ -2211,16 +2582,24 @@ function cardPreviaHTML(p) {
 }
 
 function renderSimilares(p) {
-  const candidatos = todosPerfumes.filter(x =>
-    x.id !== p.id && x.statusContratipo === "pronto" &&
-    ((x.marcaEssencia || "").toLowerCase() === (p.marcaEssencia || "").toLowerCase() ||
-     (x.genero && p.genero && x.genero === p.genero))
-  );
+  // NOVO: match de notas olfativas pesa mais
+  const notasP = (p.notasOlfativas || []).map(n => n.toLowerCase());
+  const candidatos = todosPerfumes.filter(x => {
+    if (x.id === p.id || x.statusContratipo !== "pronto") return false;
+    const mesmaMarca = (x.marcaEssencia || "").toLowerCase() === (p.marcaEssencia || "").toLowerCase();
+    const mesmoGenero = x.genero && p.genero && x.genero === p.genero;
+    const notasX = (x.notasOlfativas || []).map(n => n.toLowerCase());
+    const temNotaComum = notasX.some(n => notasP.includes(n));
+    return mesmaMarca || mesmoGenero || temNotaComum;
+  });
   const scored = candidatos.map(x => {
     let score = 0;
     if ((x.marcaEssencia || "").toLowerCase() === (p.marcaEssencia || "").toLowerCase()) score += 3;
     if (x.genero && p.genero && x.genero === p.genero) score += 1;
     if (x.concentracao === p.concentracao) score += 1;
+    const notasX = (x.notasOlfativas || []).map(n => n.toLowerCase());
+    const comuns = notasX.filter(n => notasP.includes(n)).length;
+    score += comuns * 4;
     return { x, score };
   }).sort((a,b) => b.score - a.score).slice(0, 3);
   if (scored.length === 0) return "";
@@ -2363,11 +2742,28 @@ window.abrirDetalhes = (id) => {
   const comentariosVisiveis = (isDono || isAdminUser) ? comentarios : comentarios.filter(c => !c.oculto);
   const totalComentariosVisiveis = comentariosVisiveis.length;
 
-  // NOVO: selo de autor banido dentro do modal
   const statusAutor = statusAutorDoPerfume(p);
   const avisoAutorBanido = statusAutor === "bloqueado"
     ? `<div class="aviso-autor-banido">🔒 <strong>Atenção:</strong> O autor deste perfume foi banido pelo admin. O conteúdo continua visível, mas o autor não tem mais acesso.</div>`
     : "";
+
+  // NOVO: botão fixar destaque
+  const jaEDestaque = membroAtual?.perfumeDestaqueId === p.id;
+  const botaoFixar = isDono ? `
+    <button class="btn-fixar ${jaEDestaque?'ativo':''}" onclick="toggleDestaque('${p.id}')" title="${jaEDestaque?'Remover destaque':'Fixar como destaque do perfil'}">
+      📌 ${jaEDestaque ? 'Destacado' : 'Fixar'}
+    </button>
+  ` : "";
+
+  // NOVO: notas olfativas no modal
+  const notasHTML = (p.notasOlfativas && p.notasOlfativas.length > 0) ? `
+    <div class="detalhe-info" style="margin-top: 15px;">
+      <strong>Notas Olfativas:</strong>
+      <div style="margin-top: 8px;">
+        ${p.notasOlfativas.map(n => `<span class="tag nota-olf">${escapeHtml(n)}</span>`).join("")}
+      </div>
+    </div>
+  ` : "";
 
   const html = `
     <button class="btn-fechar-modal" onclick="fecharModalDetalhes()">✖</button>
@@ -2375,6 +2771,7 @@ window.abrirDetalhes = (id) => {
     <div class="modal-topo-acoes">
       <button class="btn-compartilhar" onclick="compartilharPerfume('${p.id}')">🔗 Compartilhar</button>
       ${isDono ? `<button class="btn-duplicar" onclick="duplicarPerfume('${p.id}')">📋 Duplicar</button>` : ''}
+      ${botaoFixar}
     </div>
     <h2>${escapeHtml(p.nomePerfume)}</h2>
     ${avisoAutorBanido}
@@ -2395,6 +2792,7 @@ window.abrirDetalhes = (id) => {
     ${expTxt}
 
     ${dataInicioTxt}
+    ${notasHTML}
 
     <div class="interacoes">
       <div class="estrelas">${estrelas}</div>
@@ -2497,6 +2895,22 @@ window.abrirDetalhes = (id) => {
   }
 };
 
+// NOVO: fixar/desafixar perfume destaque
+window.toggleDestaque = async (perfumeId) => {
+  if (!usuarioAtual) return;
+  const p = todosPerfumes.find(x => x.id === perfumeId);
+  if (!p || p.autorEmail !== usuarioAtual.email) return alert("Só o dono pode fixar este perfume.");
+  const jaEDestaque = membroAtual?.perfumeDestaqueId === perfumeId;
+  try {
+    await updateDoc(doc(db, "membros", usuarioAtual.email), {
+      perfumeDestaqueId: jaEDestaque ? null : perfumeId
+    });
+    membroAtual.perfumeDestaqueId = jaEDestaque ? null : perfumeId;
+    mostrarToast(jaEDestaque ? "Destaque removido" : "Perfume fixado como destaque!", "📌");
+    abrirDetalhes(perfumeId);
+  } catch(e) { alert(e.message); }
+};
+
 window.responderComentario = (perfumeId, comentarioId, autor) => {
   document.getElementById(`input-coment-parent-${perfumeId}`).value = comentarioId;
   document.getElementById(`input-coment-index-${perfumeId}`).value = "";
@@ -2551,6 +2965,8 @@ window.duplicarPerfume = (id) => {
   document.getElementById("nomePerfume").value = (p.nomePerfume || "") + " (cópia)";
   document.getElementById("marcaEssencia").value = p.marcaEssencia || "";
   document.getElementById("concentracao").value = p.concentracao || "";
+  notasSelecionadas = Array.isArray(p.notasOlfativas) ? p.notasOlfativas.slice() : []; // NOVO
+  renderChipsNotas();
   document.getElementById("tipoOndeEncontrar").value = p.tipoOnde || "";
   toggleOndeEncontrar();
   if (p.tipoOnde === "site") document.getElementById("linkSite").value = p.linkSite || "";
@@ -2658,6 +3074,19 @@ window.abrirModalBase = (id) => {
 
 window.fecharModalBase = () => document.getElementById("modalBase").classList.add("hidden");
 
+// NOVO: gráfico de barras horizontais
+function renderBarraHorizontal(label, valor, max, cor) {
+  const pct = max > 0 ? Math.round((valor / max) * 100) : 0;
+  return `
+    <div class="barra-linha">
+      <div class="barra-label">${escapeHtml(label)}</div>
+      <div class="barra-track">
+        <div class="barra-fill ${cor}" style="width: ${pct}%">${valor}</div>
+      </div>
+    </div>
+  `;
+}
+
 window.abrirPerfil = (email) => {
   emailPerfilAnterior = null;
   const perfumesDoAutor = todosPerfumes.filter(p => p.autorEmail === email);
@@ -2690,6 +3119,54 @@ window.abrirPerfil = (email) => {
       <small>${mediaGeral.toFixed(1)} de 5 · ${totalAvaliacoes} avaliação${totalAvaliacoes===1?'':'ões'}</small>
     </div>
   ` : "";
+
+  // NOVO: destaque
+  const membroDoPerfil = todosMembros.find(m => m.email === email);
+  const destaqueId = membroDoPerfil?.perfumeDestaqueId;
+  const destaque = destaqueId ? perfumesDoAutor.find(p => p.id === destaqueId) : null;
+  const destaqueHTML = destaque ? `
+    <div class="perfume-destaque">
+      <div style="font-size: 1.1rem; color: #fff; font-weight: 600; margin-bottom: 8px;">${escapeHtml(destaque.nomePerfume)}</div>
+      <div style="font-size: 13px; color: #8b8b9e; margin-bottom: 8px;">${escapeHtml(destaque.marcaEssencia)} · ${escapeHtml(destaque.genero || '')}</div>
+      ${destaque.feedback ? `<div style="font-size: 13px; color: #cce3ff; font-style: italic; margin-bottom: 10px;">"${escapeHtml(destaque.feedback.slice(0, 150))}${destaque.feedback.length > 150 ? '...' : ''}"</div>` : ""}
+      <button class="btn-base" onclick="emailPerfilAnterior='${escapeHtml(email)}'; fecharModalPerfil(); abrirDetalhes('${destaque.id}')">Ver detalhes →</button>
+    </div>
+  ` : "";
+
+  // NOVO: gráfico por gênero
+  const porGenero = { Feminino: 0, Masculino: 0, Compartilhado: 0 };
+  perfumesDoAutor.forEach(p => { if (porGenero[p.genero] !== undefined) porGenero[p.genero]++; });
+  const maxGenero = Math.max(porGenero.Feminino, porGenero.Masculino, porGenero.Compartilhado, 1);
+  const graficoGeneroHTML = `
+    <div class="stat-grafico">
+      <h5>🧴 Perfumes por Gênero</h5>
+      ${renderBarraHorizontal("Feminino", porGenero.Feminino, maxGenero, "rosa")}
+      ${renderBarraHorizontal("Masculino", porGenero.Masculino, maxGenero, "")}
+      ${renderBarraHorizontal("Compartilhado", porGenero.Compartilhado, maxGenero, "verde")}
+    </div>
+  `;
+
+  // NOVO: evolução mensal (últimos 6 meses)
+  const agora = new Date();
+  const ultimos6 = [];
+  for (let i = 5; i >= 0; i--) {
+    const d = new Date(agora.getFullYear(), agora.getMonth() - i, 1);
+    ultimos6.push({ ano: d.getFullYear(), mes: d.getMonth(), label: d.toLocaleString('pt-BR', { month: 'short' }), qtd: 0 });
+  }
+  perfumesDoAutor.forEach(p => {
+    const ts = p.criadoEm?.toDate?.();
+    if (!ts) return;
+    const idx = ultimos6.findIndex(m => m.ano === ts.getFullYear() && m.mes === ts.getMonth());
+    if (idx >= 0) ultimos6[idx].qtd++;
+  });
+  const maxMes = Math.max(...ultimos6.map(m => m.qtd), 1);
+  const graficoMesesHTML = `
+    <div class="stat-grafico">
+      <h5>📈 Contribuições (últimos 6 meses)</h5>
+      ${ultimos6.map(m => renderBarraHorizontal(m.label, m.qtd, maxMes, "")).join("")}
+    </div>
+  `;
+
   let recomendacoesHTML = "";
   if (usuarioAtual && usuarioAtual.email !== email) {
     const idsQueInteragiu = new Set();
@@ -2712,7 +3189,7 @@ window.abrirPerfil = (email) => {
       `;
     }
   }
-  const listaHTML = perfumesDoAutor.map(p => cardPreviaHTML(p).replace(
+  const listaHTML = perfumesDoAutor.filter(p => p.id !== destaqueId).map(p => cardPreviaHTML(p).replace(
     /onclick="abrirDetalhes\('([^']+)'\)"/,
     `onclick="emailPerfilAnterior='${escapeHtml(p.autorEmail).replace(/'/g,'&#39;')}'; fecharModalPerfil(); abrirDetalhes('$1')"`
   )).join("");
@@ -2720,11 +3197,17 @@ window.abrirPerfil = (email) => {
   const statusAutor = statusAutorDoPerfume(perfumesDoAutor[0]);
   const avisoBan = statusAutor === "bloqueado" ? `<div class="aviso-autor-banido">🔒 Este usuário está banido pelo admin. Seus perfumes continuam visíveis, mas ele não tem mais acesso.</div>` : "";
 
+  // NOVO: selo admin no perfil
+  const adminStatus = statusAdminDoAutor(email);
+  const seloAdminPerfil = adminStatus === 'super' ? '<span class="tag-super">👑 Super Admin</span>'
+                        : adminStatus === 'admin' ? '<span class="tag-admin">🛡️ Admin</span>'
+                        : '';
+
   document.getElementById("perfilConteudo").innerHTML = `
     <div class="perfil-header">
       ${autorFoto ? `<img src="${autorFoto}" alt="" />` : `<div class="avatar-fallback" style="width:80px;height:80px;font-size:32px;">👤</div>`}
       <div>
-        <h2>${escapeHtml(autorNome)}</h2>
+        <h2>${escapeHtml(autorNome)} ${seloAdminPerfil}</h2>
         <small>${escapeHtml(email)}</small>
       </div>
     </div>
@@ -2739,9 +3222,12 @@ window.abrirPerfil = (email) => {
       ${mediaMaceracao > 0 ? `<div><strong>${mediaMaceracao}d</strong><span>Média Maceração</span></div>` : ''}
       ${maxMaceracao > 0 ? `<div><strong>${maxMaceracao}d</strong><span>Maior</span></div>` : ''}
     </div>
+    ${destaqueHTML}
+    ${graficoGeneroHTML}
+    ${graficoMesesHTML}
     <h4 style="margin-bottom: 15px; color: #fff;">🧪 Perfumes de ${escapeHtml(autorNome)}</h4>
     <div style="max-height: 400px; overflow-y: auto; padding-right: 5px;">
-      ${listaHTML}
+      ${listaHTML || '<div style="font-size:13px; color:#8b8b9e; text-align:center; padding: 20px;">Nenhum outro perfume.</div>'}
     </div>
     ${recomendacoesHTML}
     <div style="margin-top: 20px; text-align: center;">
@@ -2775,16 +3261,33 @@ window.fecharModalDetalhes = () => {
   }
 };
 
+// NOVO: toggleFavorito com nota pessoal opcional
 window.toggleFavorito = async (id) => {
   if (!usuarioAtual) return;
   const p = todosPerfumes.find(x => x.id === id);
   const favoritos = p.favoritos || [];
   const isFav = favoritos.includes(usuarioAtual.email);
   try {
-    await updateDoc(doc(db, "perfumes", id), {
-      favoritos: isFav ? arrayRemove(usuarioAtual.email) : arrayUnion(usuarioAtual.email)
-    });
-    mostrarToast(isFav ? "Removido dos favoritos" : "Adicionado aos favoritos", isFav ? "☆" : "⭐");
+    if (isFav) {
+      // Remover favorito
+      const notasAtuais = { ...(p.favoritosNotas || {}) };
+      delete notasAtuais[usuarioAtual.email];
+      await updateDoc(doc(db, "perfumes", id), {
+        favoritos: arrayRemove(usuarioAtual.email),
+        favoritosNotas: notasAtuais
+      });
+      mostrarToast("Removido dos favoritos", "☆");
+    } else {
+      // Adicionar favorito — pede nota pessoal opcional
+      const nota = prompt(`Por que você salvou "${p.nomePerfume}"?\n(nota pessoal opcional — deixe em branco para pular)`, "");
+      const notasAtuais = { ...(p.favoritosNotas || {}) };
+      if (nota && nota.trim()) notasAtuais[usuarioAtual.email] = nota.trim();
+      await updateDoc(doc(db, "perfumes", id), {
+        favoritos: arrayUnion(usuarioAtual.email),
+        favoritosNotas: notasAtuais
+      });
+      mostrarToast(nota && nota.trim() ? "Favoritado com nota pessoal" : "Adicionado aos favoritos", "⭐");
+    }
     abrirDetalhes(id);
     renderFavoritos(true);
   } catch (err) { alert(err.message); }
@@ -3007,6 +3510,7 @@ document.getElementById("formPerfume").addEventListener("submit", async (e) => {
       nomePerfume: document.getElementById("nomePerfume").value.trim(),
       marcaEssencia: marcaDigitada,
       concentracao: document.getElementById("concentracao").value.trim(),
+      notasOlfativas: notasSelecionadas.slice(), // NOVO
       tipoOnde, linkSite, nomeVendedor, whatsappVendedor, manipulado: manipuladoRadio.value,
       notaSimilaridade: sim, notaProjecao: proj, notaFixacao: fix, notaMedia: isEmAndamento ? 0 : (sim + proj + fix) / 3,
       baseId: baseSelecionada, baseNome: BASES.find(b => b.id === baseSelecionada)?.nome || "",
@@ -3024,7 +3528,7 @@ document.getElementById("formPerfume").addEventListener("submit", async (e) => {
       cancelarEdicao();
     } else {
       await addDoc(collection(db, "perfumes"), {
-        ...dados, curtidas: [], avaliacoes: {}, comentarios: [], diario: [], favoritos: [],
+        ...dados, curtidas: [], avaliacoes: {}, comentarios: [], diario: [], favoritos: [], favoritosNotas: {},
         autorNome: usuarioAtual.displayName, autorEmail: usuarioAtual.email,
         autorFoto: usuarioAtual.photoURL || "", criadoEm: serverTimestamp()
       });
@@ -3032,6 +3536,7 @@ document.getElementById("formPerfume").addEventListener("submit", async (e) => {
       try { localStorage.removeItem(RASCUNHO_KEY + '_' + usuarioAtual.email); } catch(e){}
       e.target.reset();
       baseSelecionada = ""; renderBases();
+      notasSelecionadas = []; renderChipsNotas();
       document.getElementById("grupoCustom").classList.add("hidden");
       document.getElementById("avisoDuplicata").classList.remove("visivel");
       toggleOndeEncontrar(); toggleStatusForm();
@@ -3072,6 +3577,8 @@ window.abrirEdicao = async (id) => {
   document.getElementById("nomePerfume").value = nomeFormatado;
   document.getElementById("marcaEssencia").value = p.marcaEssencia || "";
   document.getElementById("concentracao").value = p.concentracao || "";
+  notasSelecionadas = Array.isArray(p.notasOlfativas) ? p.notasOlfativas.slice() : []; // NOVO
+  renderChipsNotas();
   document.getElementById("tipoOndeEncontrar").value = p.tipoOnde || "";
   toggleOndeEncontrar();
   if (p.tipoOnde === "site") document.getElementById("linkSite").value = p.linkSite || "";
@@ -3117,6 +3624,7 @@ window.cancelarEdicao = () => {
   document.getElementById("avisoDiasAuto").textContent = "";
   document.getElementById("avisoDuplicata").classList.remove("visivel");
   baseSelecionada = ""; renderBases(); toggleOndeEncontrar(); toggleStatusForm();
+  notasSelecionadas = []; renderChipsNotas(); // NOVO
   document.getElementById("valSimilaridade").textContent = "5";
   document.getElementById("valProjecao").textContent = "5";
   document.getElementById("valFixacao").textContent = "5";
@@ -3129,6 +3637,69 @@ window.renderAdmin = async () => {
   renderAdminFromCache();
 };
 
+// NOVO: dashboard admin com gráficos
+function renderAdminGraficos() {
+  const cont = document.getElementById("adminGraficos");
+  if (!cont) return;
+  // Perfumes por semana (últimas 8 semanas)
+  const agora = new Date();
+  const semanas = [];
+  for (let i = 7; i >= 0; i--) {
+    const ini = new Date(agora);
+    ini.setDate(ini.getDate() - (i * 7 + 7));
+    ini.setHours(0,0,0,0);
+    const fim = new Date(agora);
+    fim.setDate(fim.getDate() - i * 7);
+    fim.setHours(23,59,59,999);
+    semanas.push({ ini: ini.getTime(), fim: fim.getTime(), label: i === 0 ? 'Atual' : `-${i}s`, qtd: 0 });
+  }
+  todosPerfumes.forEach(p => {
+    const ts = p.criadoEm?.toDate?.()?.getTime?.();
+    if (!ts) return;
+    const idx = semanas.findIndex(s => ts >= s.ini && ts <= s.fim);
+    if (idx >= 0) semanas[idx].qtd++;
+  });
+  const maxSem = Math.max(...semanas.map(s => s.qtd), 1);
+
+  // Novos membros por mês (últimos 6 meses)
+  const meses = [];
+  for (let i = 5; i >= 0; i--) {
+    const d = new Date(agora.getFullYear(), agora.getMonth() - i, 1);
+    meses.push({ ano: d.getFullYear(), mes: d.getMonth(), label: d.toLocaleString('pt-BR', { month: 'short' }), qtd: 0 });
+  }
+  todosMembros.forEach(m => {
+    const ts = m.aprovadoEm?.toDate?.();
+    if (!ts) return;
+    const idx = meses.findIndex(x => x.ano === ts.getFullYear() && x.mes === ts.getMonth());
+    if (idx >= 0) meses[idx].qtd++;
+  });
+  const maxMes = Math.max(...meses.map(m => m.qtd), 1);
+
+  // Tempo médio de aprovação (em dias) das últimas aprovações
+  const aprovadosComTempo = todosMembros
+    .filter(m => m.solicitadoEm?.toDate && m.aprovadoEm?.toDate)
+    .map(m => (m.aprovadoEm.toDate() - m.solicitadoEm.toDate()) / (1000 * 60 * 60 * 24));
+  const tempoMedio = aprovadosComTempo.length > 0
+    ? (aprovadosComTempo.reduce((a,b)=>a+b,0) / aprovadosComTempo.length).toFixed(1)
+    : "—";
+
+  cont.innerHTML = `
+    <div class="stat-grafico">
+      <h5>📊 Perfumes criados (últimas 8 semanas)</h5>
+      ${semanas.map(s => renderBarraHorizontal(s.label, s.qtd, maxSem, "")).join("")}
+    </div>
+    <div class="stat-grafico">
+      <h5>👥 Novos membros aprovados (últimos 6 meses)</h5>
+      ${meses.map(m => renderBarraHorizontal(m.label, m.qtd, maxMes, "verde")).join("")}
+    </div>
+    <div class="stat-grafico">
+      <h5>⏱️ Tempo médio de aprovação de cadastro</h5>
+      <p style="font-size: 22px; color: #4dabf7; font-weight: 700; text-align: center; padding: 10px;">${tempoMedio} dias</p>
+      <p style="font-size: 11px; color: #8b8b9e; text-align: center;">Baseado em ${aprovadosComTempo.length} aprovação${aprovadosComTempo.length===1?'':'ões'}</p>
+    </div>
+  `;
+}
+
 function renderAdminFromCache() {
   if (!souAdmin()) return;
   const totalPerfumes = todosPerfumes.length;
@@ -3137,6 +3708,7 @@ function renderAdminFromCache() {
   document.getElementById("adminTotalPerfumes").textContent = totalPerfumes;
   document.getElementById("adminTotalProntos").textContent = totalProntos;
   document.getElementById("adminTotalMacerando").textContent = totalPerfumes - totalProntos;
+  renderAdminGraficos(); // NOVO
   const pendentes = todosMembros.filter(m => m.status === "pendente");
   const contSol = document.getElementById("adminSolicitacoes");
   contSol.innerHTML = pendentes.length === 0
@@ -3177,21 +3749,18 @@ window.renderListaMembros = () => {
     const ehAdminUser = m.isAdmin === true;
     const banido = m.status === "bloqueado";
     const souEu = m.email === usuarioAtual.email;
-    // NOVO: alvo é admin comum (nem super, nem eu)
     const alvoEhAdminComum = ehAdminUser && !ehSuper;
-    // NOVO: se eu não sou super e o alvo é admin comum (outro), não posso gerenciar
     const possoGerenciar = ehSuper
-      ? false // super admin nunca é gerenciável
+      ? false
       : (alvoEhAdminComum && !euSouSuper)
-        ? false // admin comum não gerencia outro admin comum
-        : !souEu; // não pode gerenciar a si mesmo
+        ? false
+        : !souEu;
     let tagsHTML = '';
     if (ehSuper) tagsHTML += '<span class="tag-super">👑 Super Admin</span>';
     else if (ehAdminUser) tagsHTML += '<span class="tag-admin">🛡️ Admin</span>';
     if (banido) tagsHTML += '<span class="tag-banido">🔒 Banido</span>';
     let acoesHTML = '';
     if (possoGerenciar) {
-      // NOVO: renomeado para Banir / Desbanir
       if (banido) {
         acoesHTML += `<button class="btn-desbanir" onclick="desbloquearMembro('${escapeHtml(m.email)}')">🔓 Desbanir</button>`;
       } else {
@@ -3203,7 +3772,6 @@ window.renderListaMembros = () => {
         else acoesHTML += `<button class="btn-promover" onclick="promoverAdmin('${escapeHtml(m.email)}')">👑 Promover a Admin</button>`;
       }
     } else if (alvoEhAdminComum && !euSouSuper && !souEu) {
-      // NOVO: feedback visual para admin comum tentando gerenciar outro admin
       acoesHTML = `<span style="font-size: 11px; color: #8b8b9e; font-style: italic;">Apenas Super Admin</span>`;
     } else if (souEu) {
       acoesHTML = `<span style="font-size: 11px; color: #8b8b9e; font-style: italic;">Você</span>`;
@@ -3237,7 +3805,6 @@ window.recusarMembro = async (email) => {
   if (!souAdmin()) return;
   if (ehSuperAdminEmail(email) && !isSuperAdmin()) return alert("Você não pode recusar o Super Admin.");
   if (email === usuarioAtual.email) return alert("Você não pode recusar a si mesmo.");
-  // NOVO: admin comum não pode recusar outro admin comum
   if (!isSuperAdmin() && ehAdminComum(email)) return alert("Apenas o Super Admin pode recusar outro admin.");
   const motivo = prompt(`Recusar ${email}?\nMotivo (opcional):`);
   if (motivo === null) return;
@@ -3249,12 +3816,10 @@ window.recusarMembro = async (email) => {
   } catch (e) { alert(e.message); }
 };
 
-// NOVO: banir / desbanir (internamente status = bloqueado, mantido pra compat)
 window.bloquearMembro = async (email) => {
   if (!souAdmin()) return;
   if (ehSuperAdminEmail(email)) return alert("Não é possível banir o Super Admin.");
   if (email === usuarioAtual.email) return alert("Você não pode banir a si mesmo.");
-  // NOVO: admin comum não pode banir outro admin comum
   if (!isSuperAdmin() && ehAdminComum(email)) return alert("Apenas o Super Admin pode banir outro admin. Peça a ele para rebaixar primeiro, se necessário.");
   if (!confirm(`Banir ${email}?\nEle perde acesso até ser desbanido. Seus perfumes, comentários e favoritos continuam visíveis na comunidade.`)) return;
   try {
@@ -3279,7 +3844,6 @@ window.excluirMembro = async (email) => {
   if (!souAdmin()) return;
   if (ehSuperAdminEmail(email)) return alert("Não é possível excluir o Super Admin.");
   if (email === usuarioAtual.email) return alert("Você não pode excluir a si mesmo.");
-  // NOVO: admin comum não pode excluir outro admin comum
   if (!isSuperAdmin() && ehAdminComum(email)) return alert("Apenas o Super Admin pode excluir outro admin. Peça a ele para rebaixar primeiro, se necessário.");
   if (!confirm(`Excluir ${email} definitivamente?\nEle será removido do sistema e poderá solicitar acesso do zero.`)) return;
   try {
@@ -3335,18 +3899,17 @@ async function migrarMembrosAntigos() {
   } catch (e) { console.warn("Migração:", e); }
 }
 
-// NOVO: mostra dica para iOS/Safari na tela de login
 if (detectarIOSouSafari()) {
   document.addEventListener("DOMContentLoaded", () => {
     const dica = document.getElementById("dicaIos");
     if (dica) dica.classList.add("visivel");
   });
-  // Se o DOM já está pronto (script é module, executa após DOMContentLoaded)
   const dica = document.getElementById("dicaIos");
   if (dica) dica.classList.add("visivel");
 }
 
 renderBases();
+renderChipsNotas();
 </script>
 </body>
 </html>
