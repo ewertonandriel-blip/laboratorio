@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -76,6 +75,16 @@
   }
   .btn-google:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
   .btn-google img { width: 20px; height: 20px; }
+
+  /* NOVO: dica para usuários iOS */
+  .dica-ios {
+    margin-top: 20px; padding: 12px 16px;
+    background: rgba(77,171,247,0.08); border: 1px solid rgba(77,171,247,0.25);
+    border-radius: 10px; font-size: 12px; color: #a0c4e8; line-height: 1.5;
+    text-align: left; display: none;
+  }
+  .dica-ios.visivel { display: block; }
+  .dica-ios strong { color: #4dabf7; }
 
   .tela-pendente {
     position: fixed; inset: 0;
@@ -562,6 +571,10 @@
       <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
       Entrar com Google
     </button>
+    <!-- NOVO: dica exclusiva para iOS/Safari -->
+    <div id="dicaIos" class="dica-ios">
+      💡 <strong>Dica para iPhone/iPad:</strong> para manter o login salvo, abra no <strong>Safari</strong> e toque em <strong>Compartilhar → Adicionar à Tela de Início</strong>. Depois acesse pelo ícone do app.
+    </div>
   </div>
 </div>
 
@@ -1014,6 +1027,16 @@ function ehAdminComum(email) {
   return m && m.isAdmin === true;
 }
 
+// NOVO: detecta iOS (iPhone/iPad/iPod) e Safari (inclui iOS Safari)
+// Usado para forçar redirect no login e melhorar persistência de sessão
+function detectarIOSouSafari() {
+  const ua = navigator.userAgent || '';
+  const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+  // Safari desktop: tem "Safari" e não tem Chrome/Android/CriOS/FxiOS/EdgiOS
+  const isSafari = /^((?!chrome|android|crios|fxios|edgios).)*safari/i.test(ua);
+  return isIOS || isSafari;
+}
+
 function mostrarToast(msg, icone = "✅") {
   const t = document.getElementById("toastGenerico");
   t.innerHTML = `<span style="font-size:18px">${icone}</span><span>${escapeHtml(msg)}</span>`;
@@ -1332,10 +1355,21 @@ window.verificarDuplicataForm = () => {
   }
 };
 
+// NOVO: login adaptado por navegador
+// - Chrome (Android/desktop), Firefox, Edge, etc → popup (funciona bem e mantém sessão)
+// - iOS (qualquer navegador, pois todos usam WebKit) e Safari desktop → redirect
+//   (evita o problema de popup fechando IndexedDB no Safari e melhora persistência)
 window.fazerLogin = async () => {
-  try { await signInWithPopup(auth, provider); }
-  catch (err) {
+  const usarRedirect = detectarIOSouSafari();
+  try {
+    if (usarRedirect) {
+      await signInWithRedirect(auth, provider);
+    } else {
+      await signInWithPopup(auth, provider);
+    }
+  } catch (err) {
     if (err.code === "auth/unauthorized-domain") { alert("Domínio não autorizado: " + location.hostname); return; }
+    // Se popup falhar (bloqueado/fechado), tenta redirect como fallback
     if (["auth/popup-blocked","auth/popup-closed-by-user"].includes(err.code)) {
       try { await signInWithRedirect(auth, provider); } catch (e2) { alert(e2.message); }
     } else alert(err.message);
@@ -3299,6 +3333,17 @@ async function migrarMembrosAntigos() {
       });
     }
   } catch (e) { console.warn("Migração:", e); }
+}
+
+// NOVO: mostra dica para iOS/Safari na tela de login
+if (detectarIOSouSafari()) {
+  document.addEventListener("DOMContentLoaded", () => {
+    const dica = document.getElementById("dicaIos");
+    if (dica) dica.classList.add("visivel");
+  });
+  // Se o DOM já está pronto (script é module, executa após DOMContentLoaded)
+  const dica = document.getElementById("dicaIos");
+  if (dica) dica.classList.add("visivel");
 }
 
 renderBases();
